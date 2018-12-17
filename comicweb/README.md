@@ -4,7 +4,7 @@
  
   启动命令
  ```python
-scrapy crawl manhua163 #或者直接 python manage.py runserver 8001
+python start.py #或者直接 python manage.py runserver 8001
 ```
 
 启动成功后，访问http://localhost:8001/comic/
@@ -15,6 +15,20 @@ scrapy crawl manhua163 #或者直接 python manage.py runserver 8001
  
   <img src='/pic/3.jpg' width=300px></img>
   
+
+### Django配置mysql,在文件[/comicweb/comicweb/settings.py](comicweb/comicweb/settings.py)里面配置
+```markdown
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'comic',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
 ### 代码结构如下：
  ```markdown
  

@@ -8,6 +8,8 @@
  
  [流溪阁在线漫画](http://47.94.232.43/comic/)
  
+ ### 感觉还不错的请fork,star
+ 
  <img src='/pic/1.jpg' width=300px></img>
  
  <img src='/pic/2.jpg' width=300px></img>
@@ -39,7 +41,7 @@ CREATE TABLE `comic` (
   UNIQUE KEY `unique_key` (`name`,`author`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1837 DEFAULT CHARSET=utf8;
 ```
-### scrapy配置mysql,在文件[comicspider/comicscrapy/comicscrapy/settings.py](comicspider/comicscrapy/comicscrapy/settings.py)里面配置
+### scrapy配置mysql,在文件[/comicspider/comicscrapy/comicscrapy/settings.py](comicspider/comicscrapy/comicscrapy/settings.py)里面配置
 ```markdown
 # MONGODB 主机名
 MYSQL_HOST = "127.0.0.1"
@@ -53,7 +55,7 @@ MYSQL_USER='root'
 MYSQL_PASSWD='123456'
 
 ```
-### Django配置mysql,在文件[comicweb/comicweb/settings.py](comicweb/comicweb/settings.py)里面配置
+### Django配置mysql,在文件[/comicweb/comicweb/settings.py](comicweb/comicweb/settings.py)里面配置
 ```markdown
 DATABASES = {
     'default': {

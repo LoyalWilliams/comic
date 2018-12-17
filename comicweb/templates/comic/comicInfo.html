@@ -6,6 +6,7 @@
           content="app-id=958907096, app-argument=neteasecomic://shareCallback?id=5207744953610346814&a=3">
     <!--<script type="text/javascript" async="" src="/static/comic/script/ga.js?1"></script>-->
     <script type="text/javascript" async="" src="/static/comic/script/napm-web-min-1.1.4.js"></script>
+     <script type="text/javascript" src="/static/comic/script/jquery-1.9.1.min.js"></script>
     <script type="text/javascript">
         if (typeof performance != 'undefined' && typeof performance.timing != 'undefined') {
         window.detectPerformance = function() {
@@ -266,8 +267,18 @@
             {{ comic.intr}}
         </p>
     </div>
-    <div id="flex" class="u-flex" style="display: block;"><i
-            id="flex-i" class="icon sprite-app-unfold"></i></div>
+    <div id="flex" class="u-flex" style="display: block;">
+        <i  id="flex-i" class="icon sprite-app-unfold"></i>
+    </div>
+     <script type="text/javascript">
+        $('#flex-i').click(function(){
+            if($('#m-intro').css('height')=='46px'){
+                $('#m-intro').css('height','auto')
+            }else{
+                $('#m-intro').css('height','46px')
+            }
+        })
+    </script>
     <div id="tab" class="u-media m-tab">
         <a class="u-rltv active" id="auto-id-1544325917683">目录
             <i class="icon sprite-app-order js-flag"></i>

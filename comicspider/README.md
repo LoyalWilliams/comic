@@ -4,6 +4,8 @@
 
  - [漫画爬虫，将数据储存到mysql](README.md)
  
+ 爬取的漫画数据来源于163漫画，https://manhua.163.com
+ 
  启动命令
  ```python
 scrapy crawl manhua163 #或者直接 python start.py

@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>{{ chaptername }}_流溪阁_在线漫画阅读</title>
+    <meta name="Description"
+          content=""/>
+    <meta name="Keywords" content="流溪阁动漫屋:好漫画,为看漫画的人而生"/>
+    <meta name="Author" content="流溪阁动漫屋:好漫画,为看漫画的人而生"/>    <!-- 样式引用 -->
+
+    <link href="/static/comic/images/logo_lxg.png" rel="apple-touch-icon-precomposed" />
+    <link href="/static/comic/images/logo_lxg.png" rel="icon" type="image/x-icon" />
+    <link href="/static/comic/images/logo_lxg.png" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="/static/comic/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="http://css99tel.cdndm5.com/v201811191843/dm5/css/view.css"/>
+
+    <link rel="stylesheet" href="/static/comic/css/toPage.css">
+    <script src="/static/comic/script/jquery.min.js"></script>
+    <script src="/static/comic/script/toPage.js?2322"></script>
+    <script src="/static/comic/script/jquery.cookie.js" type="text/javascript"></script>
+
+</head>
+<body class="white">
+<div class="view-header-2" style="overflow:visible;position: inherit;line-height:37px">
+    <!-- <a href="/manhua-zuidixianzhanan/" class="back">退出阅读</a> -->
+    <div class="title">
+        <a href="/comic/">首页</a>
+        <span class="right-arrow">
+        <a href="/comic/getComicInfo?infourl={{infoUrl}}&comicid={{comicid}}" title="{{ comicname }}">{{ comicname|safe }}</a>
+        </span>
+        <div class="rightToolBar" style="float:right;top: 0px;border: 0px solid #ccc;padding: 0px 0px; height: 41px;">
+            </a> <a href="javascript:switchlight();" class="logo_5">
+            <div class="tip" id="lightTip">关灯</div>
+        </a>
+        </div>
+
+    </div>
+    <div class="title">
+        <a href="/comic/preChapter?chapterUrl={{chapterUrl}}&infoUrl={{infoUrl}}&comicname={{comicname}}&chaptername={{ chaptername }}&comicid={{comicid}}">上一章</a>
+        <span class="active right-arrow"> {{ chaptername|safe }}</span>
+        <span class="right-arrow"><a
+                href="/comic/nextChapter?chapterUrl={{chapterUrl}}&infoUrl={{infoUrl}}&comicname={{comicname}}&chaptername={{ chaptername }}&comicid={{comicid}}">下一章</a></span>
+    </div>
+
+
+</div>
+
+
+<div class="page_container" style="text-align: center;"></div>
+<script>
+    $page_key="{{comicname}}{{chaptername}}";
+    $current_page=$.cookie($page_key)==null?1:$.cookie($page_key);
+    $.cookie($page_key, $current_page, {path: '/', expires: 365});
+    //console.log($page_key);
+      /*容器2参数*/
+
+      var page_container={
+
+        obj_box:'.page_container',//翻页容器
+
+        total_item:{{ len|safe }},//条目总数
+
+        per_num:1,//每页条目数
+
+        current_page:$current_page,//当前页
+
+        img_urls:{{ content|safe }},
+        page_key:$page_key
+      };
+
+      /*调用分页方法,初始化数据*/
+
+      page_ctrl(page_container);
+
+
+</script>
+<div class="view-header-2" style="overflow:visible;position: inherit;line-height:37px">
+    <div class="title">
+        <a href="/comic/preChapter?chapterUrl={{chapterUrl}}&infoUrl={{infoUrl}}&comicname={{comicname}}&chaptername={{ chaptername }}&comicid={{comicid}}">上一章</a>
+        <span class="active right-arrow"> {{ chaptername|safe }}</span>
+        <span class="right-arrow"><a
+                href="/comic/nextChapter?chapterUrl={{chapterUrl}}&infoUrl={{infoUrl}}&comicname={{comicname}}&chaptername={{ chaptername }}&comicid={{comicid}}">下一章</a></span>
+    </div>
+</div>
+
+
+<div class="alertTop_1" style="display: none;"><p id="alertTop_1"></p></div>
+<script type="text/javascript">
+    function getTextCount(item) {
+        $(item).parent().find('.red').text(180 - $(item).val().length);
+    }
+</script>
+<section class="modal-wrap" style="display: none;z-index:1000">
+    <div class="modal">
+        <div class="modal-body login-modal"><span class="close"><i class="icon icon-close"></i></span>
+            <h1>登录</h1>
+            <div class="account-login-form">
+                <div class="form-wrap"><p class="tip color-main"></p>
+                    <p><input name="txt_name" type="text" autocomplete="off" value="" placeholder="您的手机号／邮箱／用户名"></p>
+                    <p style="margin-bottom:15px;"><input name="txt_password" type="password" autocomplete="off"
+                                                          value="" placeholder="密码"></p>
+                    <p class="verify">
+
+                        <input type="hidden" name="txt_code" style="display:none"/></p>
+                    <p>
+                        <button id="btnLogin" class="button">立即登录</button>
+                    </p>
+                    <p class="options"><label><input name="remember" type="checkbox" value="1">自动登录</label> <span
+                            class="find-pwd"><a href="##">忘记密码？</a></span> <span class="tabs-link pull-right"><a
+                            class="" href="##">去注册</a></span></p></div>
+                <dl class="three" style="display:none">
+                    <dt>其他账号登录</dt>
+                    <dd><span><img src="http://css99tel.cdndm5.com/v201811191843/dm5/images/account-icon-facebook.png"
+                                   alt=""></span></dd>
+                    <dd><span><img src="http://css99tel.cdndm5.com/v201811191843/dm5/images/account-icon-vk.png" alt=""></span>
+                    </dd>
+                    <dd><span><img src="http://css99tel.cdndm5.com/v201811191843/dm5/images/account-icon-ok.png" alt=""></span>
+                    </dd>
+                    <dd><span><img src="http://css99tel.cdndm5.com/v201811191843/dm5/images/account-icon-instagram.png"
+                                   alt=""></span></dd>
+                    <dd><span><img src="http://css99tel.cdndm5.com/v201811191843/dm5/images/account-icon-twitter.png"
+                                   alt=""></span></dd>
+                    <dd><span><img src="http://css99tel.cdndm5.com/v201811191843/dm5/images/account-icon-rss.png"
+                                   alt=""></span></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script type="text/javascript">
+    $(document.body).resize(function (e) {
+        adjs();
+    });
+
+</script>
+<script type="text/javascript">
+    var mh_apkhost = "cnc.down.manhuaren.com";
+    if ($('body').hasClass('white')) {
+        $('.mato5').css({color: '#252525'});
+    } else {
+        $('.mato5').css({color: '#ffffff'});
+    }
+    var isLight=$.cookie('isLight')
+    if(isLight=='on'){
+            $.cookie('isLight', 'on', {path: '/', expires: 365});
+            $('.mato5').css({color: '#252525'});
+            $('#lightTip').text('关灯');
+    }else{
+            $('body').toggleClass('white');
+            $.cookie('isLight', 'off', {path: '/', expires: 365});
+            $('.mato5').css({color: '#ffffff'});
+            $('#lightTip').text('开灯');
+    }
+
+    function switchlight() {
+        $('body').toggleClass('white');
+        if ($('body').hasClass('white')) {
+            $.cookie('isLight', 'on', {path: '/', expires: 365});
+            $('.mato5').css({color: '#252525'});
+            $('#lightTip').text('关灯');
+        } else {
+            $.cookie('isLight', 'off', {path: '/', expires: 365});
+            $('.mato5').css({color: '#ffffff'});
+            $('#lightTip').text('开灯');
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

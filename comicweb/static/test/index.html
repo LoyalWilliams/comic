@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>仿淘宝分页插件</title>
+  <!--引入分页样式文件-->
+  <link rel="stylesheet" href="css/toPage.css">
+</head>
+<body>
+    <h2 style="text-align: center">仿淘宝分页插件,完美兼容ie8,简单处理后可兼容更低版本ie</h2>
+    <!--分页容器_1-->
+    <div class="page_1"></div>
+    <!--分页容器_2-->
+    <div class="page_2"></div>
+    <!--先引入jquery-->
+    <script src="script/jquery.min.js"></script>
+    <!--再引入toPage.js-->
+    <script src="script/toPage.js"></script>
+    <!--插件使用-->
+    <script>
+      /*容器1参数*/
+      var obj_1={
+        obj_box:'.page_1',//翻页容器
+        total_item:72//条目总数
+        /*per_num:10,//每页条目数
+        current_page:8//当前页*/
+      };
+      /*容器2参数*/
+      var obj_2={
+        obj_box:'.page_2',//翻页容器
+        total_item:372,//条目总数
+        per_num:20,//每页条目数
+        current_page:8//当前页
+      };
+      /*调用分页方法,初始化数据*/
+      page_ctrl(obj_1);
+      page_ctrl(obj_2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,944 @@
+@charset "utf-8";
+/* CSS Document */
+/* ============================ 重置css样式 ============================ */
+body, h1, h2, h3, h4, h5, h6, hr, p, dl, dt, dd, ul, ol, li, pre, fieldset, lengend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+/*引用字体*/
+body, html {
+    height: 100%
+}
+
+body {
+    background: #f5f5f5
+}
+
+body, button, input, select, textarea {
+    font-size: 12px;
+    font-family: "微软雅黑"
+}
+
+h1 {
+    font-size: 18px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+h4, h5, h6 {
+    font-size: 100%;
+}
+
+em {
+    font-style: normal;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    outline: 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* 重置表单元素 */
+legend {
+    color: #000;
+}
+
+fieldset, img {
+    border: none;
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button, input, select, textarea {
+    font-size: 100%;
+}
+
+/* ========================= 页面常用样式 CSS样式 =========================== */
+.clear {
+    clear: both;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.autoHeight {
+    height: auto !important;
+    min-height: 0px;
+    height: 0px;
+}
+
+.autoHeight:after {
+    display: block;
+    clear: both;
+    content: ".";
+    visibility: hidden;
+    height: 0;
+}
+
+.pd15 {
+    padding-left: 15px;
+}
+
+.fred {
+    color: #ff3939
+}
+
+.ffb {
+    color: #ffb821;
+}
+
+.ffb:hover {
+    color: #dc9600
+}
+
+.f29 {
+    color: #299af4
+}
+
+.f29:hover {
+    color: #006cc2
+}
+
+.pd22 {
+    padding-top: 22px;
+}
+
+.mt14 {
+    margin-top: 14px;
+}
+
+.mb14 {
+    margin-bottom: 14px;
+}
+
+/*head*/
+.home {
+    background: #f5f5f5
+}
+
+.header {
+    height: 46px;
+    background: url(../images/head_line.gif) no-repeat bottom;
+    background-size: 100% 2px;
+    background-color: #fff;
+}
+
+.header .serCh {
+    display: none;
+    width: 100%;
+    height: 44px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+}
+
+.serChinputBox {
+    margin-right: 92px;
+    height: 10px
+}
+
+.searInput {
+    -webkit-appearance: none;
+    width: 100%;
+    float: left;
+    height: 30px;
+    border: 1px solid #cbcbcb;
+    margin: 8px 0 0 10px;
+    border-radius: 2px 0 0 2px;
+    border-right: 0;
+    background: #f5f5f5;
+    outline: none;
+    font-size: 15px;
+    padding: 0 5px;
+}
+
+.searBtn {
+    width: 33px;
+    height: 28px;
+    border: 1px solid #cbcbcb;
+    float: right;
+    margin: 8px 0 0 0;
+    border-radius: 0 2px 2px 0;
+    background: url(../images/bg_head_03.png) no-repeat center;
+    background-size: 17px 17px;
+    background-color: #f5f5f5;
+    border-left: 0;
+}
+
+.searClose {
+    width: 31px;
+    height: 28px;
+    border: 1px solid #cbcbcb;
+    background: url(../images/bg_serch_close.png) no-repeat center;
+    background-size: 10px 10px;
+    border-radius: 2px;
+    float: right;
+    margin: 8px 10px 0 5px;
+    background-color: #f5f5f5
+}
+
+.messagSjr {
+    width: 100%;
+    position: absolute;
+    top: 46px;
+    z-index: 4;
+    background: #fff;
+    z-index: 888
+}
+
+.messagSjr .keyTit li {
+    margin: 0 10px;
+    padding: 0 5px;
+    height: 40px;
+    border-bottom: 1px solid #cbcbcb;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+.messagSjr .keyTit li a {
+    display: block;
+    height: 40px;
+    color: #585858
+}
+
+.messagSjr p {
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    padding-left: 15px;
+}
+
+.messagSjr .tag {
+    padding: 0 10px 0 10px;
+}
+
+.messagSjr .tag li {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    vertical-align: top;
+    font-size: 12px;
+    height: 34px;
+    margin: 0 1px 1px 3px;
+}
+
+.messagSjr .tag li a {
+    background: #42b5ff;
+    display: inline-block;
+    border-radius: 2px;
+    *zoom: 1;
+    *display: inline;
+    font-size: 12px;
+    padding: 5px 10px;
+    height: 21px;
+    color: #fff;
+    line-height: 21px;
+    text-decoration: none;
+}
+
+#hotTit {
+    display: none
+}
+
+.c0 {
+    background: #42b5ff;
+}
+
+.c1 {
+    background: #0096ff;
+}
+
+.c2 {
+    background: #2775f7;
+}
+
+.c3 {
+    background: #0096ff;
+}
+
+.c4 {
+    background: #0096ff;
+}
+
+.c5 {
+    background: #42b5ff;
+}
+
+.header .logo {
+    width: 105px;
+    height: 44px;
+    float: left;
+    overflow: hidden
+}
+
+.header .logo img {
+    display: block
+}
+
+.header .icon {
+    display: block;
+    display: block;
+    float: right;
+    background-size: 100% 100%
+}
+
+.header .icon.head {
+    width: 19px;
+    height: 19px;
+    background-image: url(../images/bg_head_01.png);
+    position: relative;
+    z-index: 1;
+    margin: 12px 18px 0 0;
+}
+
+.header .icon.head img {
+    border-radius: 100px;
+    width: 18px;
+    height: 18px;
+    top: 1px;
+    position: absolute;
+    left: 1px;
+}
+
+.header .icon.head:hover {
+    background-image: url(../images/bg_head_02.png);
+}
+
+.header .icon.head .tip {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #ff2a3e;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    position: absolute;
+    right: -4px;
+    top: -2px;
+    display: none;
+}
+
+.header .icon.serch {
+    width: 17px;
+    height: 17px;
+    background-image: url(../images/bg_head_03.png);
+    margin: 13px 20px 0 0;
+}
+
+.header .icon.serch:hover {
+    background-image: url(../images/bg_head_04.png);
+}
+
+.header .icon.setup {
+    width: 18px;
+    height: 13px;
+    background-image: url(../images/bg_head_05.png);
+    margin: 15px 20px 0 0;
+}
+
+.header .icon.setup:hover {
+    background-image: url(../images/bg_head_06.png);
+}
+
+.nav {
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 3;
+    width: 100%;
+}
+
+.nav li {
+    text-align: center;
+    float: left;
+    width: 20%;
+    padding-top: 1px;
+    font-size: 14px;
+    background: url(../images/nav_line.gif) no-repeat right center;
+    height: 33px;
+    background-size: 1px 50%
+}
+
+.nav li.nobor {
+    background: none
+}
+
+.nav li:nth-child(5) {
+    background: none
+}
+
+.nav li a {
+    color: #636165;
+    display: block;
+    height: 33px;
+    line-height: 33px;
+}
+
+.nav li a.cur {
+    background: url(../images/nav_cur.png) no-repeat center bottom;
+    color: #0090ff;
+    background-size: 64px 4px
+}
+
+.nav.noab {
+    position: relative
+}
+
+.menuBar {
+    height: 44px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: none;
+    z-index: 2
+}
+
+.menuBar ul {
+    padding-left: 10px;
+    margin-right: 60px;
+}
+
+.menuBar ul li {
+    text-align: center;
+    width: 20%;
+    float: left;
+    line-height: 44px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.menuBar ul li a {
+    color: #000
+}
+
+.menuClose {
+    width: 31px;
+    height: 28px;
+    border: 2px solid #cbcbcb;
+    background: url(../images/bg_serch_close.png) no-repeat center;
+    background-size: 17px 17px border-radius : 2 px;
+    float: left;
+    margin: 8px 10px 0 5px;
+    background-color: #f5f5f5
+}
+
+.pageLine {
+    margin-top: 0px;
+    width: 100%;
+    height: 4px;
+    overflow: hidden;
+    overflow: hidden
+}
+
+.pageLine img {
+    display: block;
+    height: 2px;
+}
+
+.pageLine.file {
+    position: fixed;
+    top: 44px;
+}
+
+.bottomNav {
+    border-bottom: 1px solid #dcdcde;
+}
+
+.bottomNav li {
+    width: 33%;
+    float: left;
+    border-right: 1px solid #dcdcde
+}
+
+.bottomNav li.last {
+    border: none
+}
+
+.record {
+    font-size: 12px;
+    color: #5a5858;
+    padding: 18px 0;
+    text-align: center;
+}
+
+.record a {
+    color: #299af4;
+}
+
+.bottomDown {
+    width: 100%;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    bottom: 0;
+    display: none
+}
+.btm_in{
+    position: relative;
+}
+.bottomDown .btm_img {
+    width: 329px;
+    display: block;
+    height: 72px;
+    position: absolute;
+    top: -14px;
+    left: 0;
+    z-index: 4;
+}
+.app_download{
+    display: block;
+    width: 70px;
+    height: 36px;
+    background: url("../images/app_down_btn.png");
+    float: right;
+    background-size: 100%;
+    position: absolute;
+    right: 45px;
+    top: 13px;
+    z-index: 3;
+}
+.bottomDown .close {
+    width: 20px;
+    height: 20px;
+    background: url(../images/bg_app_close.png);
+    background-size: 100%;
+    float: right;
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 21px;
+    z-index: 44;
+}
+
+.subNav {
+    background: #fff;
+    border-bottom: 1px solid #dcdcde;
+    height: 43px;
+}
+
+.subNav li {
+    text-align: center;
+    height: 43px;
+    line-height: 43px;
+    font-size: 12px;
+    border-right: 1px solid #dcdcde;
+    width: 33%;
+    float: left
+}
+
+.subNav li.last {
+    border: none
+}
+
+.subNav li a {
+    width: 100%;
+    height: 43px;
+    display: block
+}
+
+.subNav li span {
+    text-align: center;
+    padding: 0 0 0 20px;
+    color: #299af4;
+}
+
+.subNav li .a1 {
+    background: url(../images/icon_01.png) no-repeat left;
+    background-size: 15px 10px;
+}
+
+.subNav li .a2 {
+    background: url(../images/icon_02.png) no-repeat left;
+    background-size: 11px 12px;
+}
+
+.subNav li .a3 {
+    background: url(../images/icon_03.png) no-repeat left;
+    background-size: 11px 14px;
+}
+
+.subNav li .a4 {
+    background: url(../images/icon_04.png) no-repeat left;
+    background-size: 13px 13px;
+}
+
+.subNav li .a5 {
+    background: url(../images/icon_05.png) no-repeat left;
+    background-size: 13px 12px;
+}
+
+.subNav li .a6 {
+    background: url(../images/icon_06.png) no-repeat left;
+    background-size: 13px 13px;
+}
+
+.subNav li .a7 {
+    background: url(../images/icon_07.png) no-repeat left;
+    background-size: 14px 14px;
+}
+
+.subNav li .a8 {
+    background: url(../images/icon_08.png) no-repeat left;
+    background-size: 14px 12px;
+}
+
+.subNav li .a9 {
+    background: url(../images/icon_09.png) no-repeat left;
+    background-size: 13px 12px;
+}
+
+.PubBtn {
+    border: 1px solid #0090ff;
+    font-size: 13px;
+    color: #0090ff;
+    display: block;
+    border-radius: 2px;
+    text-align: center;
+    width: 75px;
+    height: 28px;
+    line-height: 28px;
+    float: left
+}
+
+/*弹层*/
+.show {
+    position: fixed;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    z-index: 60;
+    display: block;
+    top: 0;
+    left: 0;
+    display: none
+}
+
+.layer {
+    width: 250px;
+    height: 185px;
+    background: #fff;
+    border-radius: 2px;
+    position: fixed;
+    z-index: 99999;
+    font-size: 14px;
+}
+
+.layerIcon01 {
+    width: 47px;
+    height: 47px;
+    background: url(../images/iconItem.png) 0 -443px;
+    margin: 45px auto 10px
+}
+
+.layerIcon02 {
+    width: 47px;
+    height: 47px;
+    background: url(../images/bg_sub.png);
+    background-size: 47px 47px;
+    margin: 23px auto 5px
+}
+
+.layerIcon03 {
+    width: 47px;
+    height: 47px;
+    background: url(../images/bg_his.png);
+    background-size: 47px 47px;
+    margin: 23px auto 5px
+}
+
+.layerIcon04 {
+    width: 94px;
+    height: 94px;
+    background: url(../images/iconItem.png) -1px -883px;
+    margin: 45px auto 10px
+}
+
+.layerIcon05 {
+    width: 94px;
+    height: 94px;
+    background: url(../images/iconItem.png) -113px -883px;
+    margin: 45px auto 10px
+}
+
+.layerIcon06 {
+    width: 47px;
+    height: 47px;
+    background: url(../images/bg_icon_sb.png);
+    background-size: 47px 47px;
+    margin: 23px auto 5px
+}
+
+.layer p {
+    line-height: 25px;
+    text-align: center
+}
+
+.layer p.opacity {
+    opacity: .6
+}
+
+.layer p.LinHei {
+    margin: 18px 0 19px 0;
+}
+
+.layerBtn {
+    width: 145px;
+    height: 30px;
+    display: block;
+    display: block;
+    width: 76px;
+    height: 28px;
+    background: #fff;
+    border: 1px solid #0090ff;
+    color: #0090ff;
+    text-align: center;
+    margin: 12px auto 0;
+    line-height: 28px;
+    border-radius: 2px;
+}
+
+.layer .look {
+    float: left;
+    line-height: 28px;
+    margin: 1px 20px 0 38px;
+}
+
+.layer .look:hover {
+    background: #0090ff;
+    color: #fff
+}
+
+.layer .can {
+    float: left;
+    line-height: 28px;
+    border: 1px solid #dcdcde;
+    color: #343434
+}
+
+.layer .can:hover {
+    background: #efefef
+}
+
+.layerBtn:hover {
+    display: block;
+    color: #fff;
+    border: 2px solid #0090ff;
+    background: #0090ff
+}
+
+.layerClose {
+    width: 20px;
+    height: 20px;
+    background: url(../images/bg_layer_close.png);
+    background-size: 12px 12px;
+    margin: 10px;
+    float: right;
+    cursor: pointer
+}
+
+.layer.bg {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.layer .sharBar {
+    height: 76px;
+    line-height: 76px;
+    font-size: 30px;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.layerIcon01 {
+    width: 47px;
+    height: 47px;
+    background: url(../images/bg_success.png);
+    background-size: 47px 47px;
+    margin: 23px auto 5px
+}
+
+/*分享*/
+.sharWin {
+    width: 250px;
+    height: 150px;
+    position: fixed;
+    z-index: 9999;
+    border-radius: 2px;
+    z-index: 999999;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0)
+}
+
+.sharWin .sharClose {
+    width: 20px;
+    height: 28px;
+    background: url(../images/bg_layer_close.png) no-repeat center;
+    background-size: 12px 12px;
+    margin: 5px 10px 5px 5px;
+    float: right;
+    cursor: pointer
+}
+
+.sharWin .sharClose:hover {
+    background: url(../images/bg_layer_close_h.png) center no-repeat;
+    background-size: 12px 12px;
+}
+
+.sharWin .sharBar {
+    height: 38px;
+    line-height: 38px;
+    font-size: 15px;
+    background: #fff;
+    border-radius: 2px 2px 0 0;
+    text-align: left;
+    padding-left: 15px;
+    background: #fff;
+}
+
+.sharWin .sharBox {
+    height: 222px;
+    background: rgba(255, 255, 255, .9)
+}
+
+.bds_tsina.sina {
+    background: url(../images/bg_shar_sina.png);
+    background-size: 48px 66px;
+    background-position: 0 0 !important;
+    width: 48px;
+    height: 66px;
+    padding: 0;
+    margin: 20px 0 0 22px
+}
+
+.bds_qzone.zone {
+    background: url(../images/bg_shar_zone.png);
+    background-size: 48px 66px;
+    background-position: 0 0 !important;
+    width: 48px;
+    height: 66px;
+    padding: 0;
+    margin: 20px 0 0 31px
+}
+
+.bds_tqq.tqq {
+    background: url(../images/bg_shar_tqq.png);
+    background-size: 48px 66px;
+    background-position: 0 0 !important;
+    width: 48px;
+    height: 66px;
+    padding: 0;
+    margin: 20px 0 0 31px
+}
+
+/*====弹层打开样式=======*/
+.layerz {
+    -webkit-transition-duration: .3s;
+    -webkit-transition-delay: .1s;
+    -webkit-transition-timing-function: ease-in;
+    -moz-transition-duration: .3s;
+    -moz-transition-delay: .1s;
+    -moz-transition-timing-function: ease-in;
+    -o-transition-duration: .3s;
+    -o-transition-delay: .1s;
+    -o-transition-timing-function: ease-in;
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transition: transform .3s linear .3s;
+    -webkit-transition: -webkit-transform .3s linear .3s;
+    -moz-transition: -moz-transform .3s linear .3s;
+    -o-transition: -o-transform .3s linear .3s;
+}
+
+/*安装动漫之家APP*/
+.app_home {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    background-image: url("../images/bg_app_home.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 90% auto;
+}
+
+.app_text {
+    width: 100%;
+    height: 70px;
+    background: url("../images/bg_app_text.png") no-repeat center;
+    background-size: auto 100%;
+    position: fixed;
+    bottom: 106px;
+    left: 0;
+    z-index: 100;
+
+}
+
+.app_btn {
+    width: 270px;
+    height: 44px;
+    position: fixed;
+    bottom: 37px;
+    z-index: 100;
+}
+
+.app_btn_look {
+    width: 120px;
+    height: 44px;
+    background: #ffaa17;
+    text-align: center;
+    line-height: 44px;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    float: left;
+    border-radius: 40px;
+}
+
+.app_btn_home {
+    width: 120px;
+    height: 44px;
+    background: #0c95f5;
+    text-align: center;
+    line-height: 44px;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    float: right;
+    border-radius: 40px;
+}
+.ovfHiden{overflow: hidden;height: 100%;}

@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="wap-font-scale" content="no">
+    <link href="/static/comic/images/logo_lxg.png" rel="apple-touch-icon-precomposed" />
+    <link href="/static/comic/images/logo_lxg.png" rel="icon" type="image/x-icon" />
+    <link href="/static/comic/images/logo_lxg.png" rel="shortcut icon" type="image/x-icon" />
+
+    <meta name="Keywords" content="漫画,在线漫画,手机漫画"/>
+    <!--<meta name="Description" content="将成为国内更新最快,动漫视听享受最全,资料库最详尽的社区型动漫爱好者的交流互动平台"/>-->
+    <title>在线漫画,手机漫画,流溪阁漫画网手机版</title>
+    <link href="/static/comic/css/global.css?2015111317" rel="stylesheet" type="text/css"/>
+    <link type="text/css" href="/static/comic/css/style.css?2015102217" rel="stylesheet"/>
+    <script type="text/javascript" src="/static/comic/script/jquery-1.9.1.min.js"></script>
+    <!--<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+    <script type="text/javascript" src="/static/comic/script/jquery.cookie.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/static/comic/script/common.js"></script>
+    <script type="text/javascript" src="/static/comic/script/domain.js"></script>
+    <script type="text/javascript" src="/static/comic/script/m_reader.js?20156"></script>
+    <script type="text/javascript" src="/static/comic/script/TSB.js"></script>
+    <script type="text/javascript" src="/static/comic/script/main.js"></script>
+    <style type="text/css">
+        @media (min-width: 1064px) {body {width: 700px;margin: 0 auto;}}
+    </style>
+</head>
+
+<body>
+
+
+
+<!--head-->
+
+<div class="header">
+
+    <!--搜索-->
+    <div class="serCh" id="serCh">
+        <form id="searchForm" action="/comic/search">
+            <a href="javascript:void(0);" onClick="m_global.closed('serCh')" class="searClose"></a>
+            <input  onClick="serchAction()" class="searBtn"></input>
+            <div class="serChinputBox"><input type="search" class="searInput" placeholder="漫画名或作者"
+                                              autosave="aoao.org.cn" id="searInput"></div>
+        </form>
+    </div>
+
+    <div class="messagSjr">
+        <ul class="keyTit" id="messagelist"></ul>
+        <p id="hotTit">大家都在搜:</p>
+        <ul class="tag" id="HotTag"></ul>
+    </div>
+
+    <!--搜索 end-->
+
+    <!--导航入口-->
+
+    <div class="menuBar" id="menuBar">
+        <ul>
+            <li><a href="/" title="漫画">漫画</a></li>
+            <li><a href="https://news.dmzj.com" title="新闻">新闻</a></li>
+            <li><a href="http://q.dmzj.com/" title="轻小说">轻小说</a></li>
+            <li><a href="http://bbs.dmzj.com" title="论坛">论坛</a></li>
+            <li><a href="https://www.dmzj.com/app/mobile.html" title="客户端">客户端</a></li>
+        </ul>
+
+        <a href="javascript:void(0);" class="searClose" onClick="m_global.closed('menuBar')"></a>
+    </div>
+
+    <!--导航入口 end-->
+
+    <div class="logo"><a href="/comic/"><img src="/static/comic/images/logo_lxg.png" width="105" height="44"></a></div>
+    <a href="#" title="" class="icon setup" onClick="m_global.Open('menuBar')"></a>
+    <a href="javascript:;" title="" class="icon serch" onClick="m_global.serchAction('serCh')"></a>
+    <a title="" class="icon head" onclick="m_global.headPhotoClick()">
+        <img style="display:none" src="/static/comic/images/photo.png" width="36" height="36" onerror="this.src='/static/comic/images/photo.png'">
+        <span class="tip" id="subscribe"></span></a>
+</div>
+
+<!--head end-->
+
+
+<ul class="nav autoHeight">
+    <li><a href="javascript:;" class="cur" title="推荐">推荐</a></li>
+    <!--<li><a href="/latest.html" title="更新">更新</a></li>
+    <li><a href="/classify.html" title="分类">分类</a></li>
+    <li><a href="/rank.html" title="排行">排行</a></li>
+    <li class="nobor"><a href="/subjectList.html" title="专题">专题</a></li>-->
+</ul>
+
+
+<!--焦点图-->
+
+<div class="main_visual" style="height:400px; background:#000">
+    <div class="flicking_con">
+        <a href="#">0</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+       <!-- <a href="#">3</a>
+        <a href="#">4</a>-->
+    </div>
+    <div class="flicking_conTit">
+        {% for recommend in recommends %}
+        <span>{{ recommend.title }}</span>
+        {% endfor %}
+       <!-- <span>可以动的毛茸茸！仙狐动画化决定</span>
+        <span>百草同学·吃货的故事</span>-->
+    </div>
+    <div class="main_image">
+        <ul>
+            {% for recommend in recommends %}
+            <li>
+                {% ifequal recommend.comicid  0 %}
+                <a href="javascript:;">
+                {% else %}
+                <a href="/comic/getComicInfo?infourl={{ recommend.url }}&comicid={{recommend.comicid}}">
+                {% endifequal %}
+                    <img src="{{ recommend.cover }}" width="100%" height="100%"/>
+                </a>
+            </li>
+            {% endfor %}
+
+
+
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="/static/comic/script/IndexTouchSlider.js"></script>
+<!--
+<script>
+            $(function(){
+                updateRecommends(36)
+                m_global.navStyle(0);
+            })
+</script>
+-->
+
+{% for comics in comiclist %}
+<div class="imgBox">
+    <div class="Sub_H2">
+        <span class="icon"><img src="/static/comic/images/icon_h2_{{ forloop.counter }}.png"/></span>
+        <span class="Title">{{ comics.0 }}</span>
+        <span></span>
+    </div>
+    <ul class="col_3_1">
+        {% for comic in comics.1 %}
+        <li>
+            <a class="ImgA" href="/comic/getComicInfo?infourl={{ comic.comic_url|safe }}&comicid={{comic.id}}">
+                <img src="{{ comic.cover|safe }}" width="100%"/>
+            </a>
+            <a class="txtA">{{ comic.name|safe }}</a>
+            <span class="info">作者:{{ comic.author|safe }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="Sub_H2"><span class="icon_More"></span></div>
+
+</div>
+{% endfor %}
+<script  type="text/javascript">
+    $page=0;
+    $('.imgBox .icon_More').click(function(){
+         //alert($('.imgBox .icon_More').index(this))
+         $typenum=$('.imgBox .icon_More').index(this)
+         $page++;
+         $.ajax({
+          url: '/comic/indexMore',
+          type: 'POST',
+          dataType: 'json',
+          data:{'page':$page,'typenum':$typenum},
+          success:function(data){
+          	comics=data.comics;
+          	$li='';
+          	 for (var i = comics.length - 1; i >= 0; i--) {
+                $li+='<li>'
+               +'<a class="ImgA"href="/comic/getComicInfo?infourl='+comics[i].comic_url+'&comicid='+comics[i].id+'">'
+               +'<img src="'+comics[i].cover+'"width="100%"/>'
+               +'</a>'
+               +'<a class="txtA">'+comics[i].author+'</a>'
+               +'<span class="info">作者:'+comics[i].name+'</span>'
+               +'</li>';
+            };
+          	$('.col_3_1').eq($typenum).append($li);
+
+
+            },
+           error:function(){
+               // alert('服务器超时，请重试！');
+           }
+        });
+
+
+    })
+</script>
+
+
+<div class="bottom">
+
+    <div class="pageLine"><img src="/static/comic/images/head_line.gif" width="100%"></div>
+
+    <ul class="subNav">
+
+        <li><a href="javascript:history.go(-1)"><span class="a4">&lt;&lt;&lt;</span></a></li>
+
+        <li><a href="javascript:;"><span class="a5">下载客户端</span></a></li>
+
+        <li class="last"><a href="javascript:;" onClick="m_global.toTop()"><span class="a6">返回顶部&gt;&gt;&gt;</span></a></li>
+
+    </ul>
+
+
+    <p class="record">流溪阁在线漫画 <a href="javascript:;">关于我们</a></p>
+
+
+</div>
+
+
+
+
+<!--<script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000465408'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/q_stat.php%3Fid%3D1000465408' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255781707'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/q_stat.php%3Fid%3D1255781707' type='text/javascript'%3E%3C/script%3E"));
+</script>-->
+
+</body>
+
+</html>

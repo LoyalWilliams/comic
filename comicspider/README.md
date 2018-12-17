@@ -1,8 +1,6 @@
 # comicspider
 
-这里主要包括两大部分：
-
- - [漫画爬虫，将数据储存到mysql](README.md)
+## [漫画爬虫，将数据储存到mysql](README.md)
  
  爬取的漫画数据来源于163漫画，https://manhua.163.com
  
@@ -12,7 +10,7 @@ scrapy crawl manhua163 #或者直接 python start.py
 ```
 
 
-代码结构如下：
+### 代码结构如下：
 ```markdown
 comicspider
 ├── comicscrapy

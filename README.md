@@ -1,10 +1,10 @@
 # comic
 
-这里主要包括两大部分：
+## 这里主要包括两大部分：
 
 
  - [漫画爬虫，将数据储存到mysql](comicspider)
- - [漫画网站搭建，展示](comicweb)
+ - [漫画网站搭建，并且进行展示](comicweb)
  
  [流溪阁在线漫画](http://47.94.232.43/comic/)
  
@@ -13,7 +13,8 @@
  <img src='/pic/2.jpg' width=300px></img>
  
   <img src='/pic/3.jpg' width=300px></img>
- 配置mysql
+
+###  配置mysql
  ```markdown
 DROP TABLE IF EXISTS `comic`;
 CREATE TABLE `comic` (
@@ -38,7 +39,7 @@ CREATE TABLE `comic` (
   UNIQUE KEY `unique_key` (`name`,`author`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1837 DEFAULT CHARSET=utf8;
 ```
-scrapy配置mysql,在文件[comicspider/comicscrapy/comicscrapy/settings.py](comicspider/comicscrapy/comicscrapy/settings.py)里面配置
+### scrapy配置mysql,在文件[comicspider/comicscrapy/comicscrapy/settings.py](comicspider/comicscrapy/comicscrapy/settings.py)里面配置
 ```markdown
 # MONGODB 主机名
 MYSQL_HOST = "127.0.0.1"
@@ -52,7 +53,7 @@ MYSQL_USER='root'
 MYSQL_PASSWD='123456'
 
 ```
-Django配置mysql,在文件[comicweb/comicweb/settings.py](comicweb/comicweb/settings.py)里面配置
+### Django配置mysql,在文件[comicweb/comicweb/settings.py](comicweb/comicweb/settings.py)里面配置
 ```markdown
 DATABASES = {
     'default': {
@@ -65,7 +66,7 @@ DATABASES = {
     }
 }
 ```
- 代码总览
+### 代码总览
 ```markdown
 
 comic

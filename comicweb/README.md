@@ -1,6 +1,6 @@
 # comicweb
 
- - [漫画网站搭建，展示](README.md)
+## [漫画网站搭建，展示](README.md)
  
   启动命令
  ```python
@@ -15,7 +15,7 @@ scrapy crawl manhua163 #或者直接 python manage.py runserver 8001
  
   <img src='/pic/3.jpg' width=300px></img>
   
-代码结构如下：
+### 代码结构如下：
  ```markdown
  
 comicweb

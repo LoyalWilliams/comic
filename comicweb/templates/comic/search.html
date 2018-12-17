@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="wap-font-scale" content="no">
+    <link href="/static/comic/images/logo_lxg.png" rel="apple-touch-icon-precomposed" />
+    <link href="/static/comic/images/logo_lxg.png" rel="icon" type="image/x-icon" />
+    <link href="/static/comic/images/logo_lxg.png" rel="shortcut icon" type="image/x-icon" />
+
+    <meta name="Keywords" content="漫画,在线漫画,手机漫画"/>
+    <!--<meta name="Description" content="将成为国内更新最快,动漫视听享受最全,资料库最详尽的社区型动漫爱好者的交流互动平台"/>-->
+    <title>在线漫画,手机漫画,流溪阁漫画网手机版</title>
+    <link href="/static/comic/css/global.css?2015111317" rel="stylesheet" type="text/css"/>
+    <link type="text/css" href="/static/comic/css/style.css?2015102217" rel="stylesheet"/>
+    <script type="text/javascript" src="/static/comic/script/jquery-1.9.1.min.js"></script>
+    <!--<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>-->
+    <script type="text/javascript" src="/static/comic/script/jquery.cookie.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/static/comic/script/common.js"></script>
+    <script type="text/javascript" src="/static/comic/script/domain.js"></script>
+    <script type="text/javascript" src="/static/comic/script/m_reader.js?2015102416"></script>
+    <script type="text/javascript" src="/static/comic/script/TSB.js"></script>
+    <script type="text/javascript" src="/static/comic/script/main.js"></script>
+    <style type="text/css">
+        @media (min-width: 1064px) {body {width: 700px;margin: 0 auto;}}
+    </style>
+</head>
+
+<body>
+
+
+
+<!--head-->
+
+<div class="header">
+
+    <!--搜索-->
+    <div class="serCh" id="serCh">
+        <form id="searchForm" action="/comic/search">
+            <a href="javascript:void(0);" onClick="m_global.closed('serCh')" class="searClose"></a>
+            <a href="javascript:void(0);" onClick="serchAction()" class="searBtn"></a>
+            <div class="serChinputBox"><input type="search" class="searInput" placeholder="漫画名或作者"
+                                              autosave="aoao.org.cn" id="searInput"></div>
+        </form>
+    </div>
+</div>
+
+{% for comics in comiclist %}
+<div class="imgBox">
+    <div class="Sub_H2">
+        <span class="icon"><img src="/static/comic/images/icon_h2_{{ forloop.counter }}.png"/></span>
+        <span class="Title">{{ comics.0 }}</span>
+        <span></span>
+    </div>
+    <ul class="col_3_1">
+        {% for comic in comics.1 %}
+        <li>
+            <a class="ImgA" href="/comic/getComicInfo?infourl={{ comic.comic_url|safe }}&comicid={{comic.id}}">
+                <img src="{{ comic.cover|safe }}" width="100%"/>
+            </a>
+            <a class="txtA">{{ comic.author|safe }}</a>
+            <span class="info">作者:{{ comic.name|safe }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+</div>
+{% endfor %}
+
+
+<div class="bottom">
+
+    <div class="pageLine"><img src="/static/comic/images/head_line.gif" width="100%"></div>
+
+    <ul class="subNav">
+
+        <li><a href="javascript:history.go(-1)"><span class="a4">&lt;&lt;&lt;</span></a></li>
+
+        <li><a href="javascript:;"><span class="a5">下载客户端</span></a></li>
+
+        <li class="last"><a href="javascript:;" onClick="m_global.toTop()"><span class="a6">返回顶部&gt;&gt;&gt;</span></a></li>
+
+    </ul>
+
+
+    <p class="record">流溪阁在线漫画 <a href="javascript:;">关于我们</a></p>
+
+
+</div>
+
+</body>
+
+</html>

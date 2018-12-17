@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+        <title>页面找不到</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">            
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <link rel="stylesheet" type="text/css" href="/src/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/src/css/nec.css">
+        <link rel="stylesheet" type="text/css" href="/src/css/application.css">
+        <link rel="stylesheet" href="/src/css/widget/icon.css" />
+        <link rel="stylesheet" href="/src/css/sprites/heading.css" />
+        <link rel="stylesheet" href="/src/css/sprites/face.css" />
+        <style>
+            .nodata {
+                margin: 40% 0;
+            }
+        </style>
+    </head>
+    <body>      
+        <div class="g-bd">
+            <div class="nodata">
+                <i class="icon sprite-face-angry"></i>
+                <div class="plain-text">啊咧...页面找不到</div>
+            </div>
+        </div>  
+</body>
+</html>

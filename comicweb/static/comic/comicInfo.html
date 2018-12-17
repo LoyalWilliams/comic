@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="apple-itunes-app"
+          content="app-id=958907096, app-argument=neteasecomic://shareCallback?id=5207744953610346814&a=3">
+    <script type="text/javascript" async="" src="/static/comic/script/ga.js"></script>
+    <script type="text/javascript" async="" src="/static/comic/script/napm-web-min-1.1.4.js"></script>
+    <script>
+if (typeof performance != 'undefined' && typeof performance.timing != 'undefined') {
+window.detectPerformance = function() {
+var performanceTiming = performance.timing;
+
+if (performanceTiming.responseEnd == 0) {
+setTimeout(window.detectPerformance, 20);
+return;
+}
+
+// Network latency
+var latency = performanceTiming.responseEnd - performanceTiming.fetchStart;
+
+if (latency >= 550) {
+window.SLOW_NETWORK = true;
+}
+}
+
+window.detectPerformance();
+}
+
+    window.NRUM = window.NRUM || {};
+window.NRUM.config = {key:'c59f527688a94a229cbc8eecd5b8a3bd',clientStart: +new Date()};
+(function() {var n = document.getElementsByTagName('script')[0],s = document.createElement('script');s.type = 'text/javascript';s.async = true;s.src = '/static/comic/script/napm-web-min-1.1.4.js';n.parentNode.insertBefore(s, n);})();
+
+window.PG_CONFIG = window.PG_CONFIG ||{};
+window.PG_CONFIG.clientVersion='0.0.0';
+window.PG_CONFIG.clientType='UNKNOWN';
+
+    </script>
+
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-62884321-1'],['_setLocalGifPath', '/UA-62884321-1/__utm.gif'],['_setLocalServerMode']);
+_gaq.push(['_addOrganic','baidu','word']);
+_gaq.push(['_addOrganic','soso','w']);
+_gaq.push(['_addOrganic','youdao','q']);
+_gaq.push(['_addOrganic','sogou','query']);
+_gaq.push(['_addOrganic','so.360.cn','q']);
+_gaq.push(['_addOrganic','sm.cn','q']);
+_gaq.push(['_trackPageview']);
+_gaq.push(['_trackPageLoadTime']);
+(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = '/static/comic/script/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+
+(function() {
+  function buggy() {
+    var a = [1, 2];
+    return String(a) === String(a.reverse());
+  }
+  if(!buggy()) return;
+  var r = Array.prototype.reverse;
+  Array.prototype.reverse = function reverse() {
+    if (Array.isArray(this)) this.length = this.length;
+    return r.call(this);
+  }
+})();
+
+
+    </script>
+
+    <style>
+.notification_ {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100010;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.notification-content_ {
+  width: 72%;
+  max-width: 560px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.notification-banner_ {
+  width: 100%;
+}
+
+.notification-btn_ {
+  width: 72%;
+  position: absolute;
+  left: 14%;
+  bottom: 20%;
+  z-index: 1;
+}
+
+.notification-close_ {
+  width: 10%;
+  display: block;
+  margin: 10px auto;
+}
+
+
+    </style>
+
+    <script>
+(function () {
+  console.log('notification injected');
+
+  window.onload = function () {
+    var ua = window.navigator.userAgent.toLowerCase();
+    var isComic = ua.indexOf('neteasecomic') !== -1;
+
+    if (window.localStorage && !isComic) {
+      var store = window.localStorage;
+      var now = Date.now();
+      var deadlineTime = 1540656000000;
+      var notificationTime = store.getItem('__notification__');
+
+      if (now < deadlineTime && (!notificationTime || now >= +notificationTime + 3600000 * 6)) {
+        var el = document.createElement('div');
+        el.className = 'notification_';
+        el.innerHTML = [
+          '<div class="notification-content_">',
+            '<img class="notification-banner_" src="/static/comic/images/popup_download_wap.png">',
+            '<img class="notification-btn_" src="/static/comic/images/popup_download_button_wap.png" />',
+            '<img class="notification-close_" src="/static/comic/images/popup_download_close_wap.png" />',
+          '</div>'
+        ].join('');
+
+        document.body.appendChild(el);
+
+        el.querySelector('.notification-btn_').addEventListener('click', function () {
+          window.location.href = '/download?direct=1&mid=2016061405';
+        }, false);
+
+        el.querySelector('.notification-close_').addEventListener('click', function () {
+          el.style.display = 'none';
+        }, false);
+
+        store.setItem('__notification__', now);
+      }
+    }
+  };
+})();
+
+
+    </script>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="applicable-device" content="mobile">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="dns-prefetch" href="//easyread.nosdn.127.net">
+    <link rel="dns-prefetch" href="//yuedust.yuedu.126.net">
+    <meta name="keywords" content="食戟之灵，故事漫画，校园 搞笑，附田祐斗，集英社，在线漫画，网易漫画">
+    <meta name="description"
+          content="食戟之灵，故事漫画，简介：家里经营餐馆的中学生．幸平创真，以料理人的父亲为目标，每天持续磨练自己的厨艺。但是某一天，父亲却要他进入厨艺学校“远月学园”就读。来到远月学园的创真，遇见了一个拥有「神之舌」的少女．薙切绘里奈，但是创真在插班考试中做出的料理，却被绘里奈判定为不合格。，校园 搞笑">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="baidu-site-verification" content="msEkIfsV0C">
+    <title>食戟之灵-网易在线漫画，附田祐斗，故事漫画，在线漫画，网易漫画</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!--  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="/apple-touch-icon-180x180.png">-->
+   <!-- <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">-->
+    <!-- 分享信息 -->
+    <!--<meta itemprop="image" content="https://easyread.nosdn.127.net/web/trunk/1472025907801/logox3x.png">
+    <meta itemprop="name" content="网易漫画">
+
+    <meta property="og:title" content="食戟之灵">
+
+    <meta property="og:url" content="https://h5.manhua.163.com/source/5207744953610346814">
+    <meta property="og:image" content="https://easyread.nosdn.127.net/pic20180312c60838fe3d8a4e17a6e0817126e09ba1.jpg">-->
+    <link href="//yuedust.yuedu.126.net/comic_static/h5/dist/core_online_bd89520942aa093259ecf812d099e6b5.css"
+          type="text/css" rel="stylesheet">
+    <style type="text/css">html {font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }body {margin: 0;}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {display: block;}audio,canvas,progress,video {display: inline-block; vertical-align: baseline; }audio:not([controls]) {display: none;height: 0;}[hidden],template {display: none;}a {background-color: transparent;text-decoration: none;}a:active,a:hover {outline: 0;}abbr[title] {border-bottom: 1px dotted;}b,strong {font-weight: bold;}dfn {font-style: italic;}h1 {font-size: 2em;margin: 0.67em 0;}mark {background: #ff0;color: #000;}small {font-size: 80%;}sub,sup {font-size: 75%;line-height: 0;position: relative;vertical-align: baseline;}sup {top: -0.5em;}sub {bottom: -0.25em;}img {border: 0;}svg:not(:root) {overflow: hidden;}figure {margin: 1em 40px;}hr {-moz-box-sizing: content-box;box-sizing: content-box;height: 0;}pre {overflow: auto;}code,kbd,pre,samp {font-family: monospace, monospace;font-size: 1em;}button,input,optgroup,select,textarea {color: inherit; font: inherit; margin: 0; }button {overflow: visible;}button,select {text-transform: none;}button,html input[type="button"], input[type="reset"],input[type="submit"] {-webkit-appearance: button; cursor: pointer; }button[disabled],html input[disabled] {cursor: default;}button::-moz-focus-inner,input::-moz-focus-inner {border: 0;padding: 0;}input {line-height: normal;}input[type="checkbox"],input[type="radio"] {box-sizing: border-box; padding: 0; }input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button {height: auto;}input[type="search"] {-webkit-appearance: textfield; -moz-box-sizing: content-box;-webkit-box-sizing: content-box; box-sizing: content-box;}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration {-webkit-appearance: none;}fieldset {border: 1px solid #c0c0c0;margin: 0 2px;padding: 0.35em 0.625em 0.75em;}legend {border: 0; padding: 0; }textarea {overflow: auto;}optgroup {font-weight: bold;}table {border-collapse: collapse;border-spacing: 0;}td,th {padding: 0;}ul,li{list-style: none; margin: 0;padding: 0;}
+.slate {text-align: center;padding: 20px 0;}.slate .spinner {vertical-align: middle;}.slate .plain-text {font-size: 12px;color: #999;}.slate--has-icon .spinner,.slate--has-icon .icon {margin-right: 4px;}input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus {box-shadow: 0 0 0 60px #fff inset;-webkit-text-fill-color: #333;}*,*:before,*:after {text-decoration: none;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}body {font-size: 14px; color: #333;background-color: #fff;font-family: "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;}body.has-download-layer {padding-bottom: 64px;}a {color: #333;}.navbar {position: relative;}.navbar-heading {text-align: center;font-weight: normal;font-size: 20px;line-height: 50px;margin: 0;}.container {width: 64%;margin-left: auto;margin-right: auto;}.container--wide {width: 92%;}.container--large {width: 91.46666667%;}@media (min-width: 1064px) {body {width: 700px;margin: 0 auto;}}.u-btn-danger {color: #ffffff;background-color: #cf253c;}.u-media,.u-media .media-body {overflow: hidden;}.u-media > .f-fl {margin-right: 14px;}.media-heading {margin-top: 0;font-weight: normal;font-size: 18px;margin-bottom: .3em;}.u-fs {font-size: 0;}.u-clr {clear: both;}.u-rltv {position: relative;}.u-fixed {position: fixed;}.u-hidden {visibility: hidden;}.u-visible {overflow: visible;}.u-none {display: none;}.u-wdh {width: 100%;}.u-hgt {height: 100%;}.u-brd {border: 0;}.u-ot {outline: 0;}.u-appearance {-webkit-appearance: none;outline: none;}@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {.u-repbottom {padding-bottom: 2px;}}.u-ellipsis {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}.columns {display: -webkit-box;display: -ms-flexbox;display: flex;}.columns--split .column {width: 50%;box-sizing: border-box;}.row--split {display: -ms-flexbox;display: flex;display: -webkit-flex;display: -webkit-box; }.row--split .row-item {-ms-flex: 1 1 auto;flex: 1 1 auto;-webkit-flex: 1 1 auto;-webkit-box-flex: 1;}.loading,.nodata {margin: 20% 0;text-align: center;}.nodata .plain-text {font-size: 12px;margin-top: 10px;color: #999;}.body--initial .loading,.nodata--vertical-center {margin-bottom: 0;margin-top: 0;position: absolute;top: 50%;width: 100%;-webkit-transform: translateY(-50%);transform: translateY(-50%);}.loading--mini {margin: 0;clear: both;}.loading img {vertical-align: middle;}.loading .text {color: #999;}.waterfall {padding-bottom: 40px;}.waterfall-slate {position: absolute;bottom: 0;left: 0;width: 100%;margin-bottom: 10px;}.img-block {display: block;}.img-block img {display: block;width: 100%;border-radius: 2px;}.body--background-dark {background-color: #f2f2f2;}.img-placeholder {background: #f1f1f1 url(//yuedust.yuedu.126.net/comic_static/h5/images/placeholder@2x.png?11171e19fb00b8c7ce8abe86879ca207) 50% 50% no-repeat;background-size: 30% auto;}@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {.img-placeholder {background: #f1f1f1 url(//yuedust.yuedu.126.net/comic_static/h5/images/placeholder@3x.png?2cb399ffd78d4704e076ae9a2b70db5a) 50% 50% no-repeat;background-size: 30% auto;}}html.fixed,html.fixed body {overflow: hidden;width: 100%;height: 100%;position: relative;}button[disabled],html input[disabled] {opacity: .5;}.sprite {display: inline-block;background-repeat: no-repeat;vertical-align: middle;}
+.m-foot {text-align: center;font-size: 12px;margin: 35px 0 14px;}.m-foot a,.m-foot {color: #999;}.foot-mark-container {margin-top: 12px;margin-bottom: 12px;}
+
+    </style>
+
+    <link href="//yuedust.yuedu.126.net/comic_static/h5/dist/core_online_bd89520942aa093259ecf812d099e6b5.css"
+          type="text/css" rel="stylesheet">
+    <style type="text/css">.catalog-container {margin-right: -15px;}.m-chapter-item {color: #202121;width: 25%;float: left;padding: 0 15px 15px 0;box-sizing: border-box;}a.m-chapter-item:visited {color: #202121;}.m-chapter-item .chapter-item-content {display: block;border: 1px solid #999;color: #999;border-radius: 5px;padding: 8px 2px;text-align: center;position: relative;line-height: 1.2;}.chapter-item-content .icon {position: absolute;bottom: 0;right: 0;}.m-chapter-item.is-current .chapter-item-content {background-color: #ff5f65;border-color: #ff5f65;color: #fff;}.section-title {font-size: 14px;margin: 15px 0;clear: both;}.load-more {border-radius: 20px;border: 1px solid #989898;color: #999;padding: .7em 0;background-color: #fff;margin: 0 12%;width: 76%;outline: none;}
+.source-state-wrap {display: -webkit-box;display: -ms-flexbox;display: flex;margin-bottom: 20px;}.source-state {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;font-weight: bold;}.source-updateTime {font-size: 12px;color: #999;-ms-flex-item-align: center;-ms-grid-row-align: center;align-self: center;}
+.view {z-index: 0;}.m-source {width: 100%;height: 220px;background-position: center;background-color: #fff;position: relative;z-index: 0;max-height: 250px;}.m-source .u-bgd {width: 100%;height: 75%;position: relative;z-index: 1;overflow: hidden;background-size: 100%;background-position: center;opacity: 0;-webkit-transition: opacity 0.5s;transition: opacity 0.5s;}.m-source .u-bgd .gradient {width: 100%;height: 100%;background: rgba(0, 0, 0, .25);}.comic-items--flex {width: 93%;height: 63%;margin: 0 3.5%;position: absolute;z-index: 2;bottom: 0;}.comic-items--flex .cover img {height: 100%;max-width: 113px;border-radius: 2px;}.comic-items--flex .info {margin-left: 15px;}.comic-items--flex .info h1 {font-size: 21px;font-weight: bold;margin: 0;color: #fff;}.comic-items--flex .info h2 {font-size: 12px;margin: 2% 0 1% 0;font-weight: normal;color: #fff;}@media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and (min-device-pixel-ratio: 3) {.book-icon i {padding-bottom: 2px;}.comic-items--flex .info h2 {margin: 4% 0 2% 0;}}.comic-items--flex .info h3 {font-size: 12px;font-weight: normal;margin: 0;color: #fff;display: -webkit-box;display: -ms-flexbox;display: flex;}.comic-items--flex .info h3 div {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}.comic-items--flex .book-icon {padding: 0 5px;box-sizing: border-box;position: absolute;bottom: 0;left: 0;width: 100%;height: 38px;line-height: 38px;display: block;border-radius: 3px;border: none;font-size: 16px;text-align: center;background-color: #ff5f65;color: #fff;}.return {position: absolute;width: 14mm;height: 10mm;line-height: 9mm;padding-top: 15px;padding-left: 3.5%;left: 0;top: 0;font-size: 16px;}.return span {display: inline-block;line-height: 1;color: #fff;}.navbar-text {position: absolute;display: inline-block;width: 65px;height: 50px;line-height: 50px;top: 50%;margin-top: -25px;font-style: normal;color: #fff;font-size: 16px;}.return--text {text-align: left;left: 3.5%;}.favorite--text {text-align: right;right: 3.5%;}.favorite--text span {font-size: 19px;}.i2 {position: absolute;right: 3.5%;top: 14px;z-index: 3;}.m-source .return-abslt {z-index: 3;}.return img {width: 30px;height: 30px;}.favorite {position: absolute;right: 0;bottom: 0;z-index: 11;}.fav-fixed {position: fixed;right: 3.5%;top: 23px;}.m-nav {position: fixed;width: 100%;top: 0;height: 62px;z-index: 1;visibility: hidden;text-align: center;background-color: #ff5f65;}.m-nav .book-icon {margin-top: 13px;padding: 0 5px;box-sizing: border-box;position: relative;display: inline-block;height: 36px;line-height: 36px;width: 40%;border-radius: 18px;border: none;font-size: 16px;text-align: center;background-color: #ffb712;color: #fefefe;}.m-intro {margin: 18px 3.5% 0 3.5%;height: auto;overflow: hidden;}.m-intro p {margin: 0;font-size: 15px;line-height: 23px;}.u-flex {width: 100%;height: 17px;overflow: hidden;display: none;text-align: center;}.m-tab {margin-bottom: 22px;}.m-tab a {display: inline-block;box-sizing: border-box;width: 50%;height: 50px;font-size: 16px;text-align: center;line-height: 50px;border-bottom: 1px solid #eaeaea;color: #333;-webkit-transition: color 0.5s;transition: color 0.5s;-webkit-transition: border-bottom-color 0.2s;transition: border-bottom-color 0.2s;}.m-tab a.active {border-bottom: 2px solid #ff5f65;}.m-tab a .tab-comment-count {font-size: 10px;position: absolute;margin-left: 5px;color: #999;}.m-comment-wrp {display: none;}.m-comment-wrp .downloadExp {text-align: center;}.m-comment-wrp .downloadExp a {display: inline-block;}.m-comment-wrp .i-wrp {text-align: center;}.m-comment-wrp .text {margin: 10px 0 15px 0;color: #999;font-size: 12px;}.m-comment-wrp .btn {margin-bottom: 35px;}.m-comment-wrp .btn img {width: 44px;height: 18px;}.m-comment-wrp .downloadExp-when-nocomment .exp img {width: 116px;height: 100px;}.m-comment-wrp .downloadExp-when-nocomment .text img {width: 150px;height: 12px;}.m-comment-wrp .downloadExp-when-morecomment .exp img {width: 150px;height: 55px;}.m-comment-wrp .downloadExp-when-morecomment .text {font-size: 14px;color: #b0b0b0;}
+
+    </style>
+
+    <style type="text/css">
+        @-webkit-keyframes toastFadeOut { 0%{ opacity:1; } 100%{ opacity:0; } } @keyframes toastFadeOut { 0%{ opacity:1; } 100%{ opacity:0; } } .toast-fade-out{ -webkit-animation: toastFadeOut 1s linear 1.5s; animation: toastFadeOut 1s linear 1.5s; } .m-toast { position: fixed; z-index: 9999; display: table; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100% } .m-toast .tip-block { display: table-cell; vertical-align: middle; text-align: center; } .m-toast .toast-tip { display: inline-block; font-size: 15px; color: #ffffff; background: rgba(0, 0, 0, 0.8); border-radius: 38px; box-sizing: border-box; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; } @media screen and ( max-width: 319px) { .m-toast .toast-tip { padding: 23px 10px; max-width: 310px; } } @media screen and ( min-width: 320px) and ( max-width: 339px){ .m-toast .toast-tip { padding: 23px 20px; max-width: 320px; } } @media screen and ( min-width: 340px) { .m-toast .toast-tip { padding: 23px 30px; max-width: 340px; } } .auto-1544325917666{font-size:12px;line-height:160%;} .auto-1544325917666 a{margin:0 2px;padding:2px 8px;color:#333;border:1px solid #aaa;text-decoration:none;} .auto-1544325917666 .js-disabled{cursor:default;} .auto-1544325917666 .js-selected{cursor:default;background-color:#bbb;} .comment-pub { position: fixed; z-index: 0; width: 100%; height: 54px; line-height: 52px; left: 0; bottom: 0; background-color: #f2f2f2; text-align: center; border-top: 1px solid #dcdcdc; border-bottom: 1px solid #f2f2f2; box-sizing: border-box; } .j-placeholder { display: inline-block; width: 90%; height: 36px; line-height: 36px; border: 1px solid #dcdcdc; box-sizing: border-box; border-radius: 18px; vertical-align: middle; text-align: left; padding-left: 17px; color: #999; background-color: #fff; font-size: 14px; } .pub-wrap { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(244,244,244,.9); transition: transform 0.5s; -moz-transition: -moz-transform 0.5s; -webkit-transition: -webkit-transform 0.5s; -o-transition: -o-transform 0.5s; -webkit-transform: translate3d(0, 100%, 0); transform: translate3d(0, 100%, 0); } .pub-wrap.in { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); } html.fixed .view { position: relative !important; } .pub-wrap-align{ position: relative; overflow: hidden; margin: 0 5%; } .pub-wrap .pub { width: 64px; height: 29px; line-height: 29px; border-radius: 14.5px; background-color: #ff5f65; color: #fff; text-align: center; font-size: 13px; } .pub-wrap textarea { padding: 5px 5px 0 5px; border-radius: 5px; margin: 48px 0 5px 0; height: 150px; display: block; width: 100%; background-color: #fff; border: 1px solid rgb(220,220,220); box-sizing:border-box; } .pub-wrap .wordNumber { margin: 0; padding-left:12px; font-size: 12px; color: #413d3a; } .pub-wrap .wordNumber span{ color: #ff0000; } .pub-wrap textarea:focus { outline: none; } .bgcolor-grey { background-color: transparent!important; border: none!important; } .color-grey { color: #666!important; font-weight: normal!important; } .u-space { margin: 0 3px 2px 0; } .m-comment-wrp .comments { padding: 0 3.5% 32px 3.5%; } .m-comment-wrp .item { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; } .m-comment-wrp .item .content { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; } .m-comment-wrp .item .content p{ word-break:break-all; word-wrap:break-word; } .m-comment-wrp .item .content .head-bar { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; height: 14px; line-height: 14px; padding-top: 2px; } .m-comment-wrp .item .content .user { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; display: block; overflow: hidden; } .m-comment-wrp .item .ellipsis { word-wrap: normal; white-space: nowrap; display: inline-block; } .m-comment-wrp .item .content .user .reply-text { color: #333; } .m-comment-wrp .item .content p { margin: 5px 0 0 0; font-size: 14px; } .m-comment-wrp .item .head { width: 40px; height: 40px; font-size: 0; margin-right: 10px; } .m-comment-wrp .item .head img { width: 100%; height: 100%; border-radius: 20px; } .m-comment-wrp .item a { font-size: 12px; color: #999; } .m-comment-wrp .reply { border-top: 1px solid #eaeaea; border-left: 1px solid #eaeaea; border-right: 1px solid #eaeaea; background-color: #fafafa; padding: 8px 5px; } .m-comment-wrp .r-first { margin-top: 8px; } .m-comment-wrp .r-last { border-bottom: 1px solid #eaeaea; } .m-comment-wrp .r-only { margin-top: 8px; border-bottom: 1px solid #eaeaea; } .u-none { display: none; } .floor-show { position: relative; padding: 0; height: 22px; background-color: #f5f5f5; border-top: 1px solid #eaeaea; border-left: 1px solid #eaeaea; border-right: 1px solid #eaeaea; } .launch { position: absolute; bottom: 0; left: 50%; width: 79px; height: 16px; margin-left: -40px; } .comment-item-img { max-width: 100%; max-height: 330px; } .comment-item-img-block { margin: 5px 0; line-height: 0; }
+
+    </style>
+</head>
+
+<body>
+
+<div id="view" class="view u-rltv">
+    <div id="details" class="u-media m-source" style="height: 213.333px;">
+        <div id="bgd" class="u-bgd"
+             style="height: 160px; background-image: url(&quot;https://easyread.nosdn.127.net/pic20180312c60838fe3d8a4e17a6e0817126e09ba1.jpg?imageView&amp;enlarge=1&amp;thumbnail=375z525|imageView&amp;blur=20x10&quot;); opacity: 1;">
+            <div class="gradient"></div>
+            <!--
+                <img id="blur" class="blur" src="https://easyread.nosdn.127.net/pic20180312c60838fe3d8a4e17a6e0817126e09ba1.jpg">
+                <img id="mask" class="mask" src="//yuedust.yuedu.126.net/comic_static/h5/images/gradient.png?7d6eb6ef846a9d827f5cfd9c7ab9735b"> -->
+        </div>
+        <div class="comic-items--flex">
+            <div id="cover" class="cover" style="width: 96.0128px;"><img id="cover-info"
+                                                                         src="https://easyread.nosdn.127.net/pic20180312c60838fe3d8a4e17a6e0817126e09ba1.jpg"
+                                                                         alt="漫画封面" style="width: 96.0128px;"></div>
+            <div class="info u-media u-hgt u-rltv">
+                <div id="info" class="u-rltv">
+                    <h1 class="u-ellipsis"><a href=""></a>食戟之灵</h1>
+                    <h2 class="u-ellipsis" style="margin: 0px;"><i
+                            class="icon icon-mh icon-author--white u-repbottom"></i> 附田祐斗</h2>
+                    <h3>
+                        <div class="u-ellipsis">
+                            <i class="icon icon-mh icon-mark--white u-repbottom"></i>
+                            校园
+                            搞笑
+                        </div>
+                    </h3>
+                </div>
+                <a id="read1" href="/reader/5207744953610346814" class="book-icon"
+                   data-log="detail,read_button_click,5207744953610346814"><i class="icon icon-mh icon-book"></i> 观看第一话</a>
+            </div>
+        </div>
+        <a id="return1" class="return return-abslt js-navback" href="javascript:;"><img
+                src="//yuedust.yuedu.126.net/comic_static/h5/images/return-details.png?af9c7e30ed37f17dc17be4c3b00ede5e"></a>
+        <i id="favorite1" data-log="detail,add_favorite,5207744953610346814"
+           class="icon icon-mh icon-favorite--larger i2 ">+收藏</i>
+    </div>
+    <div id="m-intro" class="m-intro" style="height: 46px;">
+        <p id="intro" data-log="detail,intro_click,5207744953610346814">
+            家里经营餐馆的中学生．幸平创真，以料理人的父亲为目标，每天持续磨练自己的厨艺。但是某一天，父亲却要他进入厨艺学校“远月学园”就读。来到远月学园的创真，遇见了一个拥有「神之舌」的少女．薙切绘里奈，但是创真在插班考试中做出的料理，却被绘里奈判定为不合格。</p>
+    </div>
+    <div id="flex" class="u-flex" data-log="detail,intro_click,5207744953610346814" style="display: block;"><i
+            id="flex-i" class="icon sprite-app-unfold"></i></div>
+    <div id="tab" class="u-media m-tab"><a class="u-rltv active"
+                                           data-log="detail,catalog_counter_clockwise_order,5207744953610346814"
+                                           id="auto-id-1544325917683">目录 <i
+            class="icon sprite-app-order js-flag"></i></a>
+
+    </div>
+    <input id="value-bookId" type="hidden" value="5207744953610346814" name="bookId">
+    <input id="value-userId" type="hidden" value="87047724" name="userId">
+    <input id="value-bookCover" type="hidden"
+           value="https://easyread.nosdn.127.net/pic20180312c60838fe3d8a4e17a6e0817126e09ba1.jpg" name="bookCover">
+    <input id="isSubscribe" class="j-flag" type="hidden" issubscribe="false">
+    <input id="cIds" type="hidden" value="" ci="" ri="">
+    <input id="islogin" type="hidden" value="logout">
+    <div id="m-comment-wrp" class="m-comment-wrp u-media" style="display: none;"></div>
+    <div id="loading" class="loading" style="display:none;"><img
+            src="//yuedust.yuedu.126.net/comic_static/h5/images/reader/loading.gif?4ecfb793c1170014b9e5c2e6b3d64aba">
+    </div>
+    <div id="catalog" style="display: block;">
+        <div class="container container--wide" style="overflow:hidden">
+            <div class="source-state-wrap">
+                <div class="source-state">连载中</div>
+                <div class="source-updateTime">最后更新：12月3号</div>
+            </div>
+            <div class="js-flag f-cb catalog-container" id="auto-id-1544325917677">
+                <a class="m-chapter-item " data-log="detail,catalog_read_click,5207744953610346814"
+                   href="/reader/5207744953610346814/5208051699720505839">
+                    <div class="chapter-item-content">
+                        <div class="f-toe">0</div>
+                    </div>
+                </a>
+                <a class="m-chapter-item " data-log="detail,catalog_read_click,5207744953610346814"
+                   href="/reader/5207744953610346814/5207266942650117421">
+                    <div class="chapter-item-content">
+                        <div class="f-toe">1</div>
+                    </div>
+                </a>
+                <a class="m-chapter-item " data-log="detail,catalog_read_click,5207744953610346814"
+                   href="/reader/5207744953610346814/5207266942650117427">
+                    <div class="chapter-item-content">
+                        <div class="f-toe">2</div>
+                    </div>
+                </a>
+                <a class="m-chapter-item " data-log="detail,catalog_read_click,5207744953610346814"
+                   href="/reader/5207744953610346814/5207266942650117428">
+                    <div class="chapter-item-content">
+                        <div class="f-toe">3</div>
+                    </div>
+                </a>
+                <a class="m-chapter-item " data-log="detail,catalog_read_click,5207744953610346814"
+                   href="/reader/5207744953610346814/5425852348770004823">
+                    <div class="chapter-item-content">
+                        <div class="f-toe">288</div>
+                        <i class="icon icon-mh icon-lock-open"></i></div>
+                </a>
+                <a class="m-chapter-item " data-log="detail,catalog_read_click,5207744953610346814"
+                   href="/reader/5207744953610346814/5431884998450049826">
+                    <div class="chapter-item-content">
+                        <div class="f-toe">289</div>
+                        <i class="icon icon-mh icon-lock-open"></i></div>
+                </a> <a class="m-chapter-item " data-log="detail,catalog_read_click,5207744953610346814"
+                        href="/reader/5207744953610346814/5437689264610068803">
+                <div class="chapter-item-content">
+                    <div class="f-toe">290</div>
+                    <i class="icon icon-mh icon-lock-open"></i></div>
+            </a></div>
+            <button type="button" data-log="detail,catalog_more_click,5207744953610346814" class="js-flag load-more"
+                    id="auto-id-1544325917674" style="display: none;"><i class="icon icon-mh icon-menu"></i>
+                戳我看更多目录(￣▽￣)
+            </button>
+        </div>
+    </div>
+    <div id="read2" class="m-nav" style="visibility: hidden;">
+        <a href="/reader/5207744953610346814" class="book-icon"
+           data-log="detail,im_read_button_click,5207744953610346814"><i class="icon icon-mh icon-book"></i> 观看第一话</a>
+
+        <i id="favorite2" data-log="detail,add_favorite,5207744953610346814"
+           class="navbar-text favorite--text "><span>+</span>收藏</i>
+        <a id="return2" class="navbar-text return--text js-navback" href="javascript:;"><i
+                class="icon icon-mh icon-return"></i><span>返回</span></a>
+    </div>
+</div>
+<div class="m-foot">
+    <div class="foot1">
+        <i class="icon icon-mh icon-logo"></i> <a href="/download" data-log="app_download,download_app_bottom,detail">下载APP</a>
+        <span class="separator">|</span>
+        <a href="/help/about">关于网易漫画</a>
+        <span class="separator">|</span>
+        <a href="javascript:void(0)" id="j-toPC"
+           onclick="location.href = location.protocol+&quot;//&quot;+location.host+location.pathname+&quot;?comic_site=NORMAL&quot;;">电脑版</a>
+    </div>
+    <div class="foot-mark-container">
+        <div>网络出版服务许可证（总）网出证（粤）字第030号</div>
+        <div>信息网络传播视听节目许可证号1908260</div>
+        <div>增值电信业务经营许可证浙B2-20160599</div>
+        <div>浙网文【2016】0313-183号</div>
+    </div>
+    <div>Copyright@163.com</div>
+</div>
+
+
+
+</body>
+</html>

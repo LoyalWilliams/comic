@@ -1,0 +1,12 @@
+beautifulsoup4==4.5.3
+bs4==0.0.1
+Django==1.8.2
+lxml==4.2.4
+MySQL-python==1.2.3
+PyMySQL==0.9.2
+python-dateutil==2.7.3
+redis==2.10.5
+requests==2.18.4
+Scrapy==1.5.1
+Twisted==18.9.0
+urllib3==1.22

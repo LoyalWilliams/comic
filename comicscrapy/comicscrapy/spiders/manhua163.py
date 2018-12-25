@@ -3,8 +3,10 @@ import scrapy
 import json
 from comicscrapy.items import ComicscrapyItem
 import time
+from comicscrapy.spiders.default import DefaultComicSpider
 
-class Manhua163Spider(scrapy.Spider):
+
+class Manhua163Spider(DefaultComicSpider):
     name = 'manhua163'
     allowed_domains = ['manhua.163.com']
     url='https://manhua.163.com/category/getData.json?sort=2&sf=1&pageSize=72&page='
@@ -21,7 +23,7 @@ class Manhua163Spider(scrapy.Spider):
             item['name'] = book['title']
             item['intr'] = book['description']
             item['last_update_chapter'] = book['latestSectionFullTitle']
-            a = time.localtime(int(book['latestPublishTime'])/1000);  ##获取昨天日期
+            a = time.localtime(int(book['latestPublishTime'])/1000)  ##获取昨天日期
             timestr = time.strftime("%Y-%m-%d %H:%M:%S", a)
             item['last_update_time'] = timestr
             item['comic_url'] = 'https://manhua.163.com/source/'+book['bookId']
@@ -33,33 +35,16 @@ class Manhua163Spider(scrapy.Spider):
 
     def detail_parse(self, response):
         item=response.meta['item']
-        comic_type=response.xpath("//dl[contains(@class,'sr-dl')]/dd[2]/a/text()").extract()
-        item['comic_type']="|".join(comic_type).strip()
+        item0 = self.parse_item(response)
+        item['comic_type']=item0['comic_type']
         item['comic_type2']=''
         item['collection']=0
         item['recommend']=0
-        praise = response.xpath("//dl[contains(@class,'sr-dl')]/dd[3]/span/text()").extract()[0]
-        item['praise']=self.paseNum(praise)
-        roast = response.xpath("//dl[contains(@class,'sr-dl')]/dd[4]/span/text()").extract()[0]
-        item['roast']=self.paseNum(roast)
-        status = response.xpath("//dl[contains(@class,'sr-dl')]/dd[1]/a[1]/text()").extract()[0]
-        if u'连载' in status :
-            item['status']=1
-        else:
-            item['status'] = 0
-        # print dict(item)
-
+        item['praise']=item0['praise']
+        item['roast']=item0['roast']
+        item['status']=item0['status']
         yield item
 
-    def paseNum(self,str):
-        if u'万' in str:
-            num=float(str.replace(u'万', ''))
-            return int(num*10000)
-        elif u'亿' in str:
-            num = float(str.replace(u'亿', ''))
-            return int(num * 100000000)
-        else:
-            return int(str)
 
 
 

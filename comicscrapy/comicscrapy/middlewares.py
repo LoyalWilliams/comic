@@ -9,5 +9,4 @@ from settings import USER_AGENTS
 class RandomUserAgent(object):
     def process_request(self, request, spider):
         useragent = random.choice(USER_AGENTS)
-        #print useragent
         request.headers.setdefault("User-Agent", useragent)

@@ -1,9 +1,18 @@
 #coding=utf-8
 
-rules=[{
-    "domain":'manhua.163.com',
-    'chapter-selector':''
-},
+rules=[
+    {
+        "domain":'manhua.163.com',
+        'chapter-selector':''
+    },
+    {
+        "domain":'www.shenmanhua.com',
+        'chapter-selector':'#topic1 li a'
+    },
+    {
+        "domain":'ac.qq.com',
+        'chapter-selector':'.chapter-page-all a'
+    }
 
 ]
 

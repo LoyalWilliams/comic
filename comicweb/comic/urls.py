@@ -10,5 +10,5 @@ urlpatterns = [
     url(r'^preChapter',views.preChapter,name='preChapter'),
     url(r'^nextChapter',views.nextChapter,name='nextChapter'),
     url(r'^indexMore',views.indexMore,name='indexMore'),
-    url(r'^search/(?P<keyword>.*).html$',views.search,name='search'),
+    url(r'^search',views.search,name='search'),
 ]

@@ -162,13 +162,13 @@ function headSerch(obj){
                 var html = "";
                 if(data.result==1000){
                     for(i=0;i<data.data.length;i++){
-                        html += '<li><a href="/comic/search/'+data.data[i].name+'.html">'+data.data[i].name+'</a></li>';
+                        html += '<li><a href="/comic/search?kw='+data.data[i].name+'">'+data.data[i].name+'</a></li>';
                     }
                 }else{
                     html = '<li><a href="javascript:;">无搜索结果</a></li>';
                 }
                 messageBox.html(html);
-                $('form[id=searchForm]').attr('action','/comic/search/'+keyword+'.html');
+                $('form[id=searchForm]').attr('action','/comic/search?kw='+keyword);
             },function(){
                 messageBox.hide();
             });
@@ -183,7 +183,7 @@ function success(data){}
 function serchAction(){
     var keyword = $("#searInput").val();
     if(keyword!=""){
-        location.href="/comic/search/"+keyword+".html"
+        location.href="/comic/search?kw="+keyword
     }else{
         alert("请输入关键词");
     }

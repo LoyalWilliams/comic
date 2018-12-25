@@ -27,7 +27,7 @@ NEWSPIDER_MODULE = 'comicscrapy.spiders'
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 1.5
+DOWNLOAD_DELAY = 2.5
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -45,7 +45,7 @@ USER_AGENTS = [
     'Opera/9.27 (Windows NT 5.2; U; zh-cn)',
     'Opera/8.0 (Macintosh; PPC Mac OS X; U; en)',
     'Mozilla/5.0 (Macintosh; PPC Mac OS X; U; en) Opera 8.0',
-    'Mozilla/5.0 (Linux; U; Android 4.0.3; zh-cn; M032 Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30',
+    # 'Mozilla/5.0 (Linux; U; Android 4.0.3; zh-cn; M032 Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30',
     'Mozilla/5.0 (Windows; U; Windows NT 5.2) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13'
 ]
 # Disable Telnet Console (enabled by default)
@@ -78,9 +78,9 @@ DEFAULT_REQUEST_HEADERS = {
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   'comicscrapy.pipelines.ComicscrapyPipeline': 300,
-}
+# ITEM_PIPELINES = {
+#    'comicscrapy.pipelines.ComicscrapyPipeline': 300,
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -113,4 +113,3 @@ MYSQL_DBNAME = "comic"
 MYSQL_TABLENAME = "comic"
 MYSQL_USER='root'
 MYSQL_PASSWD='123456'
-

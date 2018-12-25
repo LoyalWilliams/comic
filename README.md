@@ -3,7 +3,7 @@
 ## 这里主要包括两大部分：
 
 
- - [漫画爬虫，将数据储存到mysql](comicspider)
+ - [漫画爬虫，将数据储存到mysql](comicscrapy)
  - [漫画网站搭建，并且进行展示](comicweb)
  
  [流溪阁在线漫画](http://47.94.232.43/comic/)
@@ -41,7 +41,7 @@ CREATE TABLE `comic` (
   UNIQUE KEY `unique_key` (`name`,`author`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1837 DEFAULT CHARSET=utf8;
 ```
-### scrapy配置mysql,在文件[/comicspider/comicscrapy/comicscrapy/settings.py](comicspider/comicscrapy/comicscrapy/settings.py)里面配置
+### scrapy配置mysql,在文件[/comicscrapy/comicscrapy/settings.py](comicscrapy/comicscrapy/settings.py)里面配置
 ```markdown
 # MONGODB 主机名
 MYSQL_HOST = "127.0.0.1"

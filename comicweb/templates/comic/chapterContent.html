@@ -9,6 +9,8 @@
           content=""/>
     <meta name="Keywords" content="流溪阁动漫屋:好漫画,为看漫画的人而生"/>
     <meta name="Author" content="流溪阁动漫屋:好漫画,为看漫画的人而生"/>    <!-- 样式引用 -->
+    <meta name="referrer" content="never">
+
 
     <link href="/static/comic/images/logo_lxg.png" rel="apple-touch-icon-precomposed" />
     <link href="/static/comic/images/logo_lxg.png" rel="icon" type="image/x-icon" />
@@ -53,6 +55,7 @@
 <script>
     $page_key="{{comicname}}{{chaptername}}";
     $current_page=$.cookie($page_key)==null?1:$.cookie($page_key);
+    $per_num=10>{{ len|safe }}?{{ len|safe }}:10;
     $.cookie($page_key, $current_page, {path: '/', expires: 365});
     //console.log($page_key);
       /*容器2参数*/
@@ -63,7 +66,7 @@
 
         total_item:{{ len|safe }},//条目总数
 
-        per_num:1,//每页条目数
+        per_num:$per_num-1,//每页条目数
 
         current_page:$current_page,//当前页
 
@@ -132,12 +135,7 @@
 </section>
 
 
-<script type="text/javascript">
-    $(document.body).resize(function (e) {
-        adjs();
-    });
 
-</script>
 <script type="text/javascript">
     var mh_apkhost = "cnc.down.manhuaren.com";
     if ($('body').hasClass('white')) {

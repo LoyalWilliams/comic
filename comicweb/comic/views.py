@@ -16,8 +16,10 @@ def getContent(request):
     chaptername=request.GET.get('chaptername',None)
     comicid=request.GET.get('comicid',None)
     spider= spiderfactory.getSpider(chapterUrl)
-    content=spider.getContent(chapterUrl)
-    infoUrl=spider.getInfoUrlByChapterUrl(chapterUrl)
+    content=spider.getImgRealPath(chapterUrl)
+    comicManager = Comic.comicManager
+    comic = comicManager.get(Q(id=int(comicid)))
+    infoUrl=comic.comic_url
 
     context={"content":content,
              'len':len(content),
@@ -86,7 +88,7 @@ def preChapter(request):
             title = chapters[i - 1].get('title')
             break
 
-    content = spider.getContent(preUrl)
+    content = spider.getImgRealPath(preUrl)
     context = {"content": content,
                'len': len(content),
                'chaptername': title,
@@ -113,7 +115,7 @@ def nextChapter(request):
             nextUrl = chapters[i + 1].get('chapterUrl')
             title = chapters[i + 1].get('title')
             break
-    content = spider.getContent(nextUrl)
+    content = spider.getImgRealPath(nextUrl)
     context = {"content": content,
                'len': len(content),
                'chaptername': title,
@@ -153,8 +155,9 @@ def indexMore(request):
                }
     return JsonResponse(context)
 
-def search(request,keyword):
+def search(request):
     comicManager = Comic.comicManager
+    keyword=request.GET.get('kw', None)
     comics = comicManager.getComicsByAuthorOrName(keyword)
     k1 = (u'查找结果', comics)
     context = {'comiclist': [k1],

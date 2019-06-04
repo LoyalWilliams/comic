@@ -43,8 +43,8 @@ class Manhua163Spider(DefaultSpider):
             imgUrl=each.replace('\"', '').rstrip(',').strip()
             imgUrl=imgUrl.split(' : ')
             pattern = re.compile(r'NOSAccessKeyId=(.*)')
-            imgUrl=[re.sub(pattern, 'NOSAccessKeyId=c92f74b0d48f4fb39271a1109da74cc2', a).replace(' ','') for a in imgUrl]
-            # print re.sub(pattern, 'NOSAccessKeyId=c92f74b0d48f4fb39271a1109da74cc2', imgUrl)
+            imgUrl=[re.sub(pattern, 'NOSAccessKeyId=c2e341292e09405fbdb6e6d41f77d91d', a).replace(' ','') for a in imgUrl]
+            # print re.sub(pattern, 'NOSAccessKeyId=c2e341292e09405fbdb6e6d41f77d91d', imgUrl)
             l.append(imgUrl)
         return l
 

@@ -10,7 +10,7 @@ class TencentSpider(DefaultSpider):
     # 图片的真实路径为
     def getImgRealPath(self,url):
         html = self.getSourceCode(url)
-        print url
+        # print url
         data = re.findall(r"var DATA\s*= '(.*)'", html)[0]
         nonce = re.findall(r'window\[".*=(.*);', html)[0]
         nonce = execjs.eval(nonce)

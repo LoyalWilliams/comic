@@ -5,5 +5,5 @@ import os
 
 
 os.system("scrapy crawl manhua163")
-os.system("scrapy crawl shenmanhua")
-os.system("scrapy crawl tencentmanhua")
+# os.system("scrapy crawl shenmanhua")
+# os.system("scrapy crawl tencentmanhua")

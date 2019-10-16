@@ -34,7 +34,7 @@ def testFirstChapterImg():
 
 
 # testDecodeImgpath()
-testGetImgRealPath()
+# testGetImgRealPath()
 # testGetChapters()
-# testFirstChapterImg()
+testFirstChapterImg()
 

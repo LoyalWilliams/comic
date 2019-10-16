@@ -3,7 +3,7 @@
 
 # 规则样例，都是统一采用xpath
 # {
-#     "domain":'manhua.163.com',
+#     "domain":'163.bilibili.com',
 #     'author-selector':'',
 #     'name-selector':'',
 #     'intr-selector':'',
@@ -22,7 +22,7 @@
 
 rules=[
     {
-        "domain":'manhua.163.com',
+        "domain":'163.bilibili.com',
         'comic_type-selector':"//dl[contains(@class,'sr-dl')]/dd[2]/a/text()",
         'praise-selector':"//dl[contains(@class,'sr-dl')]/dd[3]/span/text()",
         'roast-selector':"//dl[contains(@class,'sr-dl')]/dd[4]/span/text()",

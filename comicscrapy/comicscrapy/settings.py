@@ -112,4 +112,4 @@ MYSQL_DBNAME = "comic"
 # 存放数据的表名称
 MYSQL_TABLENAME = "comic"
 MYSQL_USER='root'
-MYSQL_PASSWD='123456'
+MYSQL_PASSWD='root'

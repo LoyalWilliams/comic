@@ -24,6 +24,7 @@ class ShenmanhuaSpider(DefaultComicSpider):
     def detail_parse(self, response):
         item=self.parse_item(response)
         # print item
+        item['name']=item['name'].replace(u'名称：','').strip()
         item['author']=item['author'].replace(u'作者：','').strip()
         comic_type=item['comic_type'].replace(u'类型：','').strip().split(' ')
         item['comic_type']="|".join(comic_type).strip()

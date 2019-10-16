@@ -2,7 +2,7 @@
 
 rules=[
     {
-        "domain":'manhua.163.com',
+        "domain":'163.bilibili.com',
         'chapter-selector':''
     },
     {

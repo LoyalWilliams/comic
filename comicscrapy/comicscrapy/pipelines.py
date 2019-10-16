@@ -3,7 +3,8 @@
 import pymysql
 from scrapy.conf import settings
 import datetime
-
+import traceback
+import crawler.settings
 class ComicscrapyPipeline(object):
     def __init__(self):
         host = settings["MYSQL_HOST"]
@@ -31,8 +32,17 @@ roast=%(roast)d,last_update_chapter='%(last_update_chapter)s',last_update_time='
             self.cur.execute(sql)
             self.db.commit()
             return item
-        except:
-            print 'mysql insert exception:'+sql
+        except Exception, e:
+            print '########################################################'
+            print 'str(Exception):\t', str(Exception)
+            print 'str(e):\t\t', str(e)
+            print 'repr(e):\t', repr(e)
+            print 'e.message:\t', e.message
+            print 'traceback.print_exc():';
+            traceback.print_exc()
+            print 'traceback.format_exc():\n%s' % traceback.format_exc()
+            print 'mysql insert exception:'+sql.encode('utf8')
+            print '########################################################'
 
     def close_spider(self,spider):
         self.db.close()

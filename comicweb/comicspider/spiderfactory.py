@@ -2,7 +2,7 @@
 import spiders
 from comicspider.spiders import manhua163Spider,shenmanhuaSpider,tencentSpider
 def getSpider(url):
-    if 'manhua.163.com' in url:
+    if '163.bilibili.com' in url:
         return manhua163Spider.manhua163
     elif 'www.shenmanhua.com' in url:
         # print 1

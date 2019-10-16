@@ -8,8 +8,8 @@ from comicscrapy.spiders.default import DefaultComicSpider
 
 class Manhua163Spider(DefaultComicSpider):
     name = 'manhua163'
-    allowed_domains = ['manhua.163.com']
-    url='https://manhua.163.com/category/getData.json?sort=2&sf=1&pageSize=72&page='
+    allowed_domains = ['163.bilibili.com']
+    url='https://163.bilibili.com/category/getData.json?sort=2&sf=1&pageSize=72&page='
     offset = 0
     start_urls = [url+str(offset)]
 
@@ -26,7 +26,7 @@ class Manhua163Spider(DefaultComicSpider):
             a = time.localtime(int(book['latestPublishTime'])/1000)  ##获取昨天日期
             timestr = time.strftime("%Y-%m-%d %H:%M:%S", a)
             item['last_update_time'] = timestr
-            item['comic_url'] = 'https://manhua.163.com/source/'+book['bookId']
+            item['comic_url'] = 'https://163.bilibili.com/source/'+book['bookId']
             yield scrapy.Request(url=item['comic_url'],meta={'item':item},callback=self.detail_parse)
 
         if self.offset < 71:

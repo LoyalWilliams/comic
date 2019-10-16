@@ -32,7 +32,7 @@ def getContent(request):
     return render(request, 'comic/chapterContent.html',context )
 
 def index(request):
-    spider= spiderfactory.getSpider('https://manhua.163.com')
+    spider= spiderfactory.getSpider('https://163.bilibili.com')
     recommends=spider.getRecommend()
     comicManager=Comic.comicManager
     for recommend in recommends:

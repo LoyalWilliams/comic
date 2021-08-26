@@ -8,5 +8,5 @@ python-dateutil==2.7.3
 redis==2.10.5
 requests==2.18.4
 Scrapy==1.5.1
-Twisted==18.9.0
+Twisted==20.3.0
 urllib3==1.22

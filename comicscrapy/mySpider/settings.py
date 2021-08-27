@@ -25,7 +25,7 @@ ROBOTSTXT_OBEY = False
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 2.5
+DOWNLOAD_DELAY = 1
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -112,4 +112,4 @@ MYSQL_PASSWD='123qwe'
 IMAGES_URLS_FIELD = "image_urls"  # 对应item里面设定的字段，取到图片的url
 IMAGES_RESULT_FIELD = "image_path"
 # prodir = os.path.abspath(os.path.dirname(__file__))
-IMAGES_STORE = '.\\images' # 设置图片保存path
+IMAGES_STORE = '/project/images' # 设置图片保存path

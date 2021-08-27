@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 
 import os
+import scrapy
 
 
 os.system("scrapy crawl bilibili")

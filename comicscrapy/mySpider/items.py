@@ -21,4 +21,7 @@ class MyspiderItem(scrapy.Item):
     chapter_time          =scrapy.Field()
     urls                  =scrapy.Field()
     add_time              =scrapy.Field()
+    image_urls = scrapy.Field()
+    images = scrapy.Field()
+    paths = scrapy.Field()
 

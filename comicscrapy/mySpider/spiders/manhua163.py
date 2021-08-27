@@ -4,6 +4,7 @@ import json
 from mySpider.items import MyspiderItem
 import copy
 
+
 class Manhua163Spider(scrapy.Spider):
     name = 'bilibili'
     headers = {'Content-Type': 'application/json',
@@ -15,7 +16,7 @@ class Manhua163Spider(scrapy.Spider):
     def parse(self, response):
         # 一共56页
         target_url = 'https://manga.bilibili.com/twirp/comic.v1.Comic/ClassPage?device=pc&platform=web'
-        for i in range(1, 57):
+        for i in range(1, 11):  # 爬10页
             data = {
                 "style_id": -1,
                 "area_id": -1,

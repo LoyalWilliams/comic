@@ -95,3 +95,13 @@ USER_AGENTS = [
     # 'Mozilla/5.0 (Linux; U; Android 4.0.3; zh-cn; M032 Build/IML74K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30',
     'Mozilla/5.0 (Windows; U; Windows NT 5.2) AppleWebKit/525.13 (KHTML, like Gecko) Chrome/0.2.149.27 Safari/525.13'
 ]
+# MONGODB 主机名
+MYSQL_HOST = "127.0.0.1"
+# MONGODB 端口号
+MYSQL_PORT = 3306
+# 数据库名称
+MYSQL_DBNAME = "comic"
+# 存放数据的表名称
+MYSQL_TABLENAME = "comic"
+MYSQL_USER='root'
+MYSQL_PASSWD='123qwe'

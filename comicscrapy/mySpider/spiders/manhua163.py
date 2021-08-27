@@ -2,7 +2,7 @@
 import scrapy
 import json
 from mySpider.items import MyspiderItem
-
+import copy
 
 class Manhua163Spider(scrapy.Spider):
     name = 'bilibili'
@@ -31,19 +31,16 @@ class Manhua163Spider(scrapy.Spider):
     def parse_comic(self, response):
         jtext = response.text
         data = json.loads(jtext)
-        # for comic in data['data']:
-        #     comic_id = comic['season_id']
-
-        #     self.log('comic_i1111111111111111111111111111d')
-        #     self.log(comic_id)
-        comic_id = 25501
-        form_data = {
-            "comic_id": comic_id
-        }
-        target_url = 'https://manga.bilibili.com/twirp/comic.v1.Comic/ComicDetail?device=pc&platform=web'
-        yield scrapy.Request(target_url,
-                             body=json.dumps(form_data), method='POST', callback=self.detail_parse,
-                             headers=self.headers)
+        for comic in data['data']:
+            comic_id = comic['season_id']
+            # comic_id = 25501
+            form_data = {
+                "comic_id": comic_id
+            }
+            target_url = 'https://manga.bilibili.com/twirp/comic.v1.Comic/ComicDetail?device=pc&platform=web'
+            yield scrapy.Request(target_url,
+                                body=json.dumps(form_data), method='POST', callback=self.detail_parse,
+                                headers=self.headers)
 
     def detail_parse(self, response):
         jtext = response.text
@@ -52,15 +49,20 @@ class Manhua163Spider(scrapy.Spider):
         item = MyspiderItem()
         item['comic_id'] = data['data']['id']
         item['name'] = data['data']['title']
+        item['author'] = data['data']['author_name']
         item['cover'] = data['data']['vertical_cover']
         item['intr'] = data['data']['evaluate']
+        item['last_short_title'] = data['data']['last_short_title']
         for ep in ep_list:
             form_data = {"ep_id": ep['id']}
+            item=copy.deepcopy(item)
             item['chapter_title'] = ep['title']
+            item['chapter_id'] = ep['id']
             item['chapter_short_title'] = ep['short_title']
             item['chapter_time'] = ep['pub_time']
             target_url = 'https://manga.bilibili.com/twirp/comic.v1.Comic/GetImageIndex?device=pc&platform=web'
-
+            # self.log(item)
+            # self.log('qqqqqqqqqq')
             yield scrapy.Request(target_url,
                                  body=json.dumps(form_data), method='POST',
                                  callback=self.comic_info, meta={'item': item}, headers=self.headers)
@@ -74,8 +76,6 @@ class Manhua163Spider(scrapy.Spider):
         form_data = {
             "urls": json.dumps(urls)
         }
-        # item["urls"]=json.dumps(urls)
-        # yield item
         target_url = 'https://manga.bilibili.com/twirp/comic.v1.Comic/ImageToken?device=pc&platform=web'
         yield scrapy.Request(target_url,
                              body=json.dumps(form_data), method='POST',
@@ -87,5 +87,5 @@ class Manhua163Spider(scrapy.Spider):
         item = response.meta['item']
         data = json.loads(jtext)
         item['urls'] = json.dumps(
-            [url_token['url']+'?'+url_token['token'] for url_token in data['data']])
+            [url_token['url']+'?token='+url_token['token'] for url_token in data['data']])
         yield item

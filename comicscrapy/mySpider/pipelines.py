@@ -6,35 +6,44 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-
+from mySpider import settings
+from mySpider.models import Comic,ComicChapter
+import pymysql
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
 class MyspiderPipeline:
+    def __init__(self):
+        host = settings.MYSQL_HOST
+        port = settings.MYSQL_PORT
+        dbname = settings.MYSQL_DBNAME
+        user = settings.MYSQL_USER
+        passwd = settings.MYSQL_PASSWD
+        print(host,port,dbname,user,passwd)
+        self.comics={}
+     
+        #初始化数据库连接
+        engine = create_engine("mysql+pymysql://"+user+":"+passwd+"@"+host+"/"+dbname,encoding="utf-8",echo=True)
+        
+        #创建session类型
+        DBSession = sessionmaker(bind=engine)
+        
+        #创建session对象
+        self.session = DBSession()
+        
     def process_item(self, item, spider):
-        spider.log ('333333333333333333333333')
-        spider.log(item)
-        return item
-#     def __init__(self):
-#         host = settings["MYSQL_HOST"]
-#         port = settings["MYSQL_PORT"]
-#         dbname = settings["MYSQL_DBNAME"]
-#         user = settings["MYSQL_USER"]
-#         passwd = settings["MYSQL_PASSWD"]
-#         print host,port,dbname,user,passwd
-#         self.db = pymysql.connect(host=host, port=port, user=user, passwd=passwd, db=dbname, charset='utf8')
-#         self.cur = self.db.cursor()
-
-#     def process_item(self, item, spider):
-#         sql='''
-# INSERT INTO comic (author,name,intr,cover,comic_url,comic_type,comic_type2,collection,recommend,praise,roast,last_update_chapter,last_update_time,status,add_time) 
-# VALUES ('%(author)s','%(name)s','%(intr)s','%(cover)s','%(comic_url)s','%(comic_type)s','%(comic_type2)s',%(collection)d,%(recommend)d,%(praise)d,%(roast)d,'%(last_update_chapter)s','%(last_update_time)s',%(status)d,'%(add_time)s') 
-# ON DUPLICATE KEY UPDATE author='%(author)s',name='%(name)s',intr='%(intr)s',cover='%(cover)s',comic_url='%(comic_url)s',
-# comic_type='%(comic_type)s',comic_type2='%(comic_type2)s',collection=%(collection)d,recommend=%(recommend)d,praise=%(praise)d,
-# roast=%(roast)d,last_update_chapter='%(last_update_chapter)s',last_update_time='%(last_update_time)s',status=%(status)d
-# '''
-#         now = datetime.datetime.now()  ##now为datetime（即时间类型）
-#         timestr = now.strftime("%Y-%m-%d %H:%M:%S")
-#         item['add_time']=timestr
-#         sql = sql % dict(item)
+        comic=Comic(comic_id=item['comic_id'],name=item['name'],intr=item['intr']
+        ,cover=item['cover'],last_short_title=item['last_short_title'],author=item['author'])
+        self.comics[item['comic_id']]=comic
+        comic_chapter=ComicChapter(comic_id=item['comic_id'],chapter_id=item['chapter_id'],short_title=item['chapter_short_title'],
+        urls=item['urls'],title=item['chapter_title'],pub_time=item['chapter_time'])
+        #添加到session
+        # session.add_all([new_user1,new_user2,new_user3])
+        self.session.add_all([comic_chapter])
+        
+        #提交即保存到数据库
+        self.session.commit()
 #         try:
 #             self.cur.execute(sql)
 #             self.db.commit()
@@ -51,5 +60,9 @@ class MyspiderPipeline:
 #             print 'mysql insert exception:'+sql.encode('utf8')
 #             print '########################################################'
 
-#     def close_spider(self,spider):
-#         self.db.close()
+    def close_spider(self,spider):
+        
+        self.session.add_all(self.comics.values())
+        self.session.commit()
+        #关闭session
+        self.session.close()

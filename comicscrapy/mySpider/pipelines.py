@@ -72,7 +72,7 @@ class MyspiderPipeline:
         self.session.close()
 
 
-class DoubanImgDownloadPipeline(ImagesPipeline):
+class ImgDownloadPipeline(ImagesPipeline):
     default_headers = {
         'accept': 'image/webp,image/*,*/*;q=0.8',
         'accept-encoding': 'gzip, deflate, sdch, br',

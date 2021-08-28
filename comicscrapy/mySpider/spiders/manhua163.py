@@ -16,7 +16,7 @@ class Manhua163Spider(scrapy.Spider):
     def parse(self, response):
         # 一共56页
         target_url = 'https://manga.bilibili.com/twirp/comic.v1.Comic/ClassPage?device=pc&platform=web'
-        for i in range(1, 11):  # 爬10页
+        for i in range(1,2 ):  # 图片太多了，只爬1页
             data = {
                 "style_id": -1,
                 "area_id": -1,

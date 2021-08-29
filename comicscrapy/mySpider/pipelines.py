@@ -40,14 +40,14 @@ class MyspiderPipeline:
         comic = Comic(comic_id=item['comic_id'], name=item['name'], intr=item['intr'],
                       cover=item['cover'], last_short_title=item['last_short_title'], author=item['author'])
         self.comics[item['comic_id']] = comic
-        comic_chapter = ComicChapter(comic_id=item['comic_id'], chapter_id=item['chapter_id'], short_title=item['chapter_short_title'],
-                                     urls=item['urls'], title=item['chapter_title'], pub_time=item['chapter_time'], paths=item['paths'])
+        # comic_chapter = ComicChapter(comic_id=item['comic_id'], chapter_id=item['chapter_id'], short_title=item['chapter_short_title'],
+        #                              urls=item['urls'], title=item['chapter_title'], pub_time=item['chapter_time'], paths=item['paths'])
         # 添加到session
         # session.add_all([new_user1,new_user2,new_user3])
-        self.session.add_all([comic_chapter])
+        # self.session.add_all([comic_chapter])
 
         # 提交即保存到数据库
-        self.session.commit()
+        # self.session.commit()
 #         try:
 #             self.cur.execute(sql)
 #             self.db.commit()

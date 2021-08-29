@@ -64,7 +64,7 @@ DOWNLOADER_MIDDLEWARES = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    # 'scrapy.pipelines.images.ImagesPipeline': 1 ,   # 使用scrapy内置的ImagesPipeline
-   'mySpider.pipelines.ImgDownloadPipeline': 200,
+   # 'mySpider.pipelines.ImgDownloadPipeline': 200,
    'mySpider.pipelines.MyspiderPipeline': 300,
 }
 

@@ -38,7 +38,7 @@ class MyspiderPipeline:
 
     def process_item(self, item, spider):
         comic = Comic(comic_id=item['comic_id'], name=item['name'], intr=item['intr'],
-                      cover=item['cover'], last_short_title=item['last_short_title'], author=item['author'])
+                      cover=item['cover'], last_short_title=item['last_short_title'], author=json.dumps(item['author']))
         self.comics[item['comic_id']] = comic
         # comic_chapter = ComicChapter(comic_id=item['comic_id'], chapter_id=item['chapter_id'], short_title=item['chapter_short_title'],
         #                              urls=item['urls'], title=item['chapter_title'], pub_time=item['chapter_time'], paths=item['paths'])

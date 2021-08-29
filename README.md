@@ -31,28 +31,41 @@ python使用3.8
 
 ###  配置mysql
  ```markdown
+
 DROP TABLE IF EXISTS `comic`;
 CREATE TABLE `comic` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `author` varchar(50) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `intr` varchar(500) NOT NULL,
+  `comic_id` int(11) NOT NULL,
+  `author` varchar(50) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `intr` varchar(500) DEFAULT NULL,
+  `last_short_title` varchar(100) DEFAULT NULL,
   `cover` varchar(100) NOT NULL,
   `comic_url` varchar(100) DEFAULT NULL,
-  `comic_type` varchar(20) NOT NULL,
-  `comic_type2` varchar(20) NOT NULL,
-  `collection` int(11) NOT NULL,
-  `recommend` int(11) NOT NULL,
-  `praise` bigint(20) DEFAULT NULL,
-  `roast` bigint(20) NOT NULL,
-  `last_update_chapter` varchar(50) NOT NULL,
-  `last_update_time` datetime NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1',
-  `add_time` datetime NOT NULL,
+  `comic_type` varchar(20) DEFAULT NULL,
+  `styles` varchar(200) DEFAULT NULL,
+  
   `isDelete` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `unique_key` (`name`,`author`)
-) ENGINE=InnoDB AUTO_INCREMENT=1837 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`)
+-- ,UNIQUE KEY `unique_key` (`comic_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `comic_chapter`;
+
+CREATE TABLE `comic_chapter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `comic_id` int(11) NOT NULL,
+  `chapter_id` int(11) NOT NULL,
+  `short_title` varchar(100) DEFAULT NULL,
+  `urls` LONGTEXT DEFAULT NULL,
+  `paths` LONGTEXT DEFAULT NULL,
+  `title` varchar(400) DEFAULT NULL,
+  `pub_time` datetime DEFAULT NULL,
+  `isDelete` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
+
+
 ```
 ### scrapy配置mysql,在文件[/comicscrapy/comicscrapy/settings.py](comicscrapy/comicscrapy/settings.py)里面配置
 ```markdown
